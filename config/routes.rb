@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  resources :foodies
-# Set landing page
-root 'foodies#index'
+  # Set landing page
+  root 'landing_page#index'
+
+  get 'landing_page/login'
+
+  get 'landing_page/signup'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
