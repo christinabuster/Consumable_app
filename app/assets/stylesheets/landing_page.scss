@@ -2,12 +2,40 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* --------------------- */
-/* NAVIGATION BAR
 /* --------------------- */
 
+// NAVIGATION BAR
 .site-header-actions {
   top: 0;
   right: 0;
   padding-left: 18px;
   padding-top: 10px;
+}
+//End NAVIGATION BAR
+
+
+// Carousel
+.carousel-inner > .item > img{
+   max-width:1000px;
+   max-height:480px;
+   min-width: 1000px;
+}
+
+.item {
+  max-height: 480px;
+}
+// End carousel
+
+// Carousel
+iframe {
+position: relative;
+margin:auto;
+top:50%;
+left:33%;
+}
+// End carousel
+
+
+.section-heading{
+  text-align: center;
 }
