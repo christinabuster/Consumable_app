@@ -1,13 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- FOR NAVBAR -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <!-- END NAVBAR -->
   <title>ConsumableApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- NAVBAR -->
+  <!-- NAVIGATION ELEMENTS -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <!-- Navbar Header and Branding -->
+      <div class="navbar-header">
+        <!-- Navabar Collapse Toggle -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Welcome to Consumable</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Restaurants</a></li>
+          <li><a href="#">Foodies' Profiles</a></li>
+          <li><a href="#">Wishlist</a></li>
+          <!-- Dropdown menu -->
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search By<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Cuisine</a></li>
+              <li><a href="#">Rating</a></li>
+              <li><a href="#">Price</a></li>
+              <!-- <li class="divider"></li> -->
+              <li><a href="#">Location</a></li>
+              <!-- <li class="divider"></li> -->
+              <!-- <li><a href="#">One more separated link</a></li> -->
+            </ul>
+          </li>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <div class="site-header-actions">
+                  <input type="text" name="user_name" placeholder="User Name">
+                  <input type="password" name="user_password" placeholder="Password">
+                  <a class="btn btn-primary site-header-actions-btn" href="/join?source=header-home" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Sign in</a>
+                  <a class="btn site-header-actions-btn mr-1
+                  " href="/login" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign up</a>
+                </div>
+              </li>
+            </ul>
+        </ul>
 
+        <!-- Dropdown menu fixed to the right -->
+      </div> <!-- END of Collapse -->
+    </div> <!-- END Container -->
+  </nav> <!-- END NAVBAR -->
 <%= yield %>
 
 </body>
