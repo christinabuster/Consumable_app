@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Set landing page
   root 'landing_page#index'
 
-  get 'landing_page/login'
+  get 'users/sign_in'
 
-  get 'landing_page/signup'
+  get 'users/sign_up'
 
 
 
