@@ -1,21 +1,29 @@
 Rails.application.routes.draw do
 
-  #resources :reviews
+  # resources :reviews
   #root 'reviews#index'
-
-  #devise_for :users
-  # Set landing page
-  root 'landing_page#index'
-
-  get 'users/sign_in'
-
-  get 'users/sign_up'
-
   resources :reviews do
     member do
       get 'map_location'
     end
   end
+
+  devise_for :users
+  # Set landing page
+  root 'landing_page#index'
+
+  get 'landing_page/login'
+
+  get 'landing_page/signup'
+
+  get 'users/sign_in'
+
+  get 'users/sign_up'
+
+
+
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
