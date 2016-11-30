@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   # Set landing page
   root 'landing_page#index'
 
+  get 'landing_page/login'
+
+  get 'landing_page/signup'
+
   get 'users/sign_in'
 
   get 'users/sign_up'
