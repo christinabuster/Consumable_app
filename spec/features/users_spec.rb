@@ -14,6 +14,11 @@ RSpec.feature "LandingPages", type: :feature do
         fill_in('Email', :with => 'test@gmail.com')
         fill_in('Password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
+        click_button('Sign up')
+        visit '/'
+        expect(page). to have_content ("@")
+        click_link('Logout')
+        expect(page). to_not have_content ("@")
       end #Then
     end # Steps
   end # Context
