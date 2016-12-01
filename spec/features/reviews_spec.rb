@@ -40,7 +40,7 @@ RSpec.feature "Reviews", type: :feature do
         fill_in('Cuisine', :with => 'Southern')
         fill_in('Dish', :with => 'fried chicken')
         fill_in('Price', :with => '$10')
-        select "✭", :from => "review[rating]"
+        select "✭✭✭", :from => "review[rating]"
         fill_in('Street', :with => '1550 Market st.')
         fill_in('City', :with => 'San Diego')
         fill_in('State', :with => 'fried chicken')
