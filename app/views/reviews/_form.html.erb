@@ -35,7 +35,13 @@
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
+    <select class="selectpicker" name="review[rating]">
+      <option value="1">&#x272D;</option>
+      <option value="2">&#x272D;&#x272D;</option>
+      <option value="3">&#x272D;&#x272D;&#x272D;</option>
+      <option value="4">&#x272D;&#x272D;&#x272D;&#x272D;</option>
+      <option value="5">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
+    </select>
   </div>
   <div class="field">
     <%= f.label :street %><br>
