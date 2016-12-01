@@ -51,9 +51,9 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li><a href="#">Restaurants</a></li>
-          <li><a href="#">Foodies' Profiles</a></li>
+          <li><a href="/profiles">My Profile</a></li>
+          <li><a href="#">My Wishlists</a></li>
           <li><a href="/reviews">Create Review</a></li>
-          <li><a href="#">Wishlist</a></li>
           <li><a href="/search/search_by">Search By</a></li>
           <!-- Dropdown menu -->
           <!-- <li class="dropdown">
@@ -86,10 +86,14 @@
 
         <!-- Dropdown menu fixed to the right -->
       </div> <!-- END of Collapse -->
+
+      <!-- Everything else contained -->
+      <%= yield %>
+
     </div> <!-- END Container -->
   </nav> <!-- END NAVBAR -->
 
-<%= yield %>
+
 
 </body>
 </html>
