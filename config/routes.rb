@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :profiles
   # resources :reviews
   #root 'reviews#index'
   resources :reviews do
