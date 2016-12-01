@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,19 +14,16 @@
   </thead>
 
   <tbody>
-    <% @profiles.each do |profile| %>
       <tr>
-        <td><%= profile.name %></td>
-        <td><%= profile.birthday %></td>
-        <td><%= profile.about_me %></td>
-        <td><%= link_to 'Show', profile %></td>
-        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
-        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= @user.profile.name %></td>
+        <td><%= @user.profile.birthday %></td>
+        <td><%= @user.profile.about_me %></td>
+
       </tr>
-    <% end %>
   </tbody>
 </table>
 
 <br>
 
-<!-- <%= link_to 'New Profile', new_profile_path %> -->
+<%= link_to 'Edit Profile', edit_profile_path(@user.profile) %> <br/>
+<%= link_to 'New Profile', new_profile_path %>
