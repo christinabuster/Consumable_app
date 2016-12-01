@@ -32,7 +32,9 @@
 
 <p>
   <strong>Rating:</strong>
-  <%= @review.rating %>
+  <% @review.rating.times do %>
+    &#x272D;
+  <% end %>
 </p>
 
 <p>
