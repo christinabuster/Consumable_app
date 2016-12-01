@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+.navbar-default {
+     background-color: white;
+     font-family: 'Aref Ruqaa', serif;
+     margin-bottom: 0px;
+     padding-bottom: 0px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: 		#9ACD32; /*Change active text color here*/
+  font-weight: bold;
+  font-family: 'Aref Ruqaa', serif;
+  font-size: 10pt;
+}
+
+.navbar-default .navbar-brand {
+  color: 		#32CD32; /*Change active text color here*/
+  font-weight: bold;
+}

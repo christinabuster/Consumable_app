@@ -11,8 +11,8 @@ RSpec.feature "SearchPages", type: :feature do
         visit '/search/search_by'
       end
       And 'I am in the search page' do
-        expect(page).to have_content ("Search Reviews")
-        expect(page).to have_content ("Find It")
+        expect(page).to have_content("Search Reviews")
+        expect(page).to have_content("Find It")
       end
     end #steps
   end #context
