@@ -14,11 +14,7 @@ RSpec.feature "LandingPages", type: :feature do
         expect(page).to have_content ("Search By")
         expect(page).to have_content ("Log In")
         expect(page).to have_content ("Sign Up")
-        expect(page).to have_content ("Concerns?")
-        expect(page).to have_content ("Address")
-        expect(page).to have_content ("Phone")
-        expect(page).to have_content ("Email")
-        expect(page).to have_content ("Send Message")
+    
       end #Then
     end # Steps
   end # Context
