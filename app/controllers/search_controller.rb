@@ -14,6 +14,7 @@ class SearchController < ApplicationController
   end
 
   def price
+    @reviews = Review.where(price: params[:price])
   end
 
   def location

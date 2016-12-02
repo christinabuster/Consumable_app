@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   get 'search/search_by'
 
   # get 'search/cuisine'
-  #
+
   get 'search/rating'
-  #
-  # get 'search/price'
-  #
+
+  get 'search/price'
+  
   # get 'search/location'
 
   # Set landing page

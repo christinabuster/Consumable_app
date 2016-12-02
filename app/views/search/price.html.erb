@@ -1,2 +1,37 @@
-<h1>Search#price</h1>
-<p>Find me in app/views/search/price.html.erb</p>
+<h2>Amar Rocks!!!</h2>
+<h1> Search by Pricing </h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Restaurant name</th>
+      <th>Cuisine</th>
+      <th>Dish</th>
+      <th>Price</th>
+      <th>Rating</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postalcode</th>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reviews.each do |review| %>
+    <tr>
+      <td><%= review.restaurant_name %></td>
+      <td><%= review.cuisine %></td>
+      <td><%= review.dish %></td>
+      <td><%= review.price %></td>
+      <td><%= review.rating%></td>
+      <td><%= review.street %></td>
+      <td><%= review.city %></td>
+      <td><%= review.state %></td>
+      <td><%= review.postalcode %></td>
+      <td><%= review.description %></td>
+      <td><%= review.user.email %></td>
+    </tr>
+    <% end %>
+  </tbody>
