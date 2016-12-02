@@ -5,7 +5,7 @@
         <!-- Navbar Header and Branding -->
           <p class="navbar-text navbar-left">Search Reviews</p>
         <!-- SEARCH FIELDS -->
-        <form class="navbar-form navbar-left" role="search" action="/search/location" method="get">
+        <form class="navbar-form navbar-left" role="search" action="/search/rating" method="get">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search by Cuisine" name="cuisine">
             <input type="text" class="form-control" placeholder="Search by Location" name="postal">
@@ -18,11 +18,12 @@
             </select>
 
             <select class="selectpicker" name="rating">
-              <option value="1">&#x272D;</option>
-              <option value="2">&#x272D;&#x272D;</option>
-              <option value="3">&#x272D;&#x272D;&#x272D;</option>
-              <option value="4">&#x272D;&#x272D;&#x272D;&#x272D;</option>
-              <option value="5">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
+              <option value="nil"> rating </option>
+              <option value="&#x272D;">&#x272D;</option>
+              <option value="&#x272D;&#x272D;">&#x272D;&#x272D;</option>
+              <option value="&#x272D;&#x272D;&#x272D;">&#x272D;&#x272D;&#x272D;</option>
+              <option value="&#x272D;&#x272D;&#x272D;&#x272D;">&#x272D;&#x272D;&#x272D;&#x272D;</option>
+              <option value="&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
             </select>
 
           </div> <!-- END CLASS FORM GROUP -->

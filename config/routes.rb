@@ -1,22 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :profiles
-  # resources :reviews
-  #root 'reviews#index'
-  resources :reviews do
-    member do
-      get 'map_location'
-    end
-  end
 
   devise_for :users
   get 'search/search_by'
 
 
 
-  # get 'search/cuisine'
-  #
-  # get 'search/rating'
+  get 'search/cuisine'
+
+  get 'search/rating'
   #
   # get 'search/price'
   #
@@ -33,4 +25,12 @@ Rails.application.routes.draw do
 
   get 'users/sign_up'
 
+  resources :profiles
+  # resources :reviews
+  #root 'reviews#index'
+  resources :reviews do
+    member do
+      get 'map_location'
+    end
+  end
 end
