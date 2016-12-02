@@ -21,16 +21,16 @@ class ReviewsController < ApplicationController
   # GET /reviews/1/edit
   def edit
   end
-# method 'maplocation' will render map on page
-def map_location
-  @review = Review.find(params[:id])
-  @hash = Gmaps4rails.build_markers(@review) do |review, marker|
-    marker.lat(review.latitude)
-    marker.lng(review.longitude)
-    marker.infowindow("<em>" + review.street + "</em>")
+  # method 'maplocation' will render map on page
+  def map_location
+    @review = Review.find(params[:id])
+    @hash = Gmaps4rails.build_markers(@review) do |review, marker|
+      marker.lat(review.latitude)
+      marker.lng(review.longitude)
+      marker.infowindow("<em>" + review.street + "</em>")
+    end
+    render json: @hash.to_json
   end
-  render json: @hash.to_json
-end
 
 
   # POST /reviews
@@ -73,13 +73,13 @@ end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_review
-      @review = Review.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_review
+    @review = Review.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def review_params
-      params.require(:review).permit(:latitude, :longitude, :restaurant_name, :cuisine, :dish, :price, :rating, :street, :city, :state, :postalcode, :description, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def review_params
+    params.require(:review).permit(:latitude, :longitude, :restaurant_name, :cuisine, :dish, :price, :rating, :street, :city, :state, :postalcode, :description, :user_id)
+  end
 end

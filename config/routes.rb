@@ -10,17 +10,12 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+
   get 'search/search_by'
 
 
 
   # get 'search/cuisine'
-  #
-  # get 'search/rating'
-  #
-  # get 'search/price'
-  #
-  get 'search/location'
 
   # Set landing page
   root 'landing_page#index'
