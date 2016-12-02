@@ -15,14 +15,19 @@
 
 
 // Carousel
+#myCarousel{
+  top: 100px;
+  left:180px;
+  max-height:380px;
+  max-width: 600px;
+}
 .carousel-inner > .item > img{
+  max-height:380px;
 
-   max-height:480px;
-  
 }
 
 .item {
-  max-height: 480px;
+  max-height: 380px;
 }
 // End carousel
 
@@ -31,7 +36,8 @@ iframe {
 position: relative;
 margin:auto;
 top:50%;
-left:33%;
+left:0%;
+max-height: 380px;
 }
 // End carousel
 
