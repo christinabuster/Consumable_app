@@ -2,20 +2,20 @@ class SearchController < ApplicationController
 
 
   def search_by
-    @review = Review.find_by_rating(params[:rating])
-    # render "review
+    @reviews = Review.all
+
   end
 
+  def cuisine
+  end
 
-  # def cuisine
-  # end
-  #
-  # def rating
-  # end
-  #
-  # def price
-  # end
-  #
-  # def location
-  # end
+  def rating
+    @reviews = Review.where(rating: params[:review_rating])
+  end
+
+  def price
+  end
+
+  def location
+  end
 end
