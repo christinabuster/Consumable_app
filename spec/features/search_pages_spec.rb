@@ -70,6 +70,8 @@ RSpec.feature "SearchPages", type: :feature do
         select "✭✭✭", :from => "review_rating"
         find('#search_by').click
         expect(page).to have_content("Search by Rating")
+        expect(page).to_not have_content("✭✭✭✭")
+        expect(page).to_not have_content("✭✭✭")
       end
     end #steps
   end #context

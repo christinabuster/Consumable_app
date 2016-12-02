@@ -24,7 +24,9 @@
       <td><%= review.cuisine %></td>
       <td><%= review.dish %></td>
       <td><%= review.price %></td>
-      <td><%= review.rating %></td>
+      <td><%= review.rating.times do %>
+        &#x272D;
+        <% end %></td>
       <td><%= review.street %></td>
       <td><%= review.city %></td>
       <td><%= review.state %></td>
