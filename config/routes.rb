@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get 'users/sign_up'
 
+  get 'search/new_search'
+
   resources :profiles
   # resources :reviews
   #root 'reviews#index'
