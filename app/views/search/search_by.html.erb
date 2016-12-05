@@ -12,18 +12,19 @@
 
             <!-- Single button -->
             <select class="selectpicker" name="price">
+              <option value=""> Price </option>
               <option value="10">$1-$10</option>
               <option value="20">$11-$20</option>
               <option value="21+">$21 + Up</option>
             </select>
 
             <select class="selectpicker" name="rating">
-              <option value="nil"> rating </option>
-              <option value="&#x272D;">&#x272D;</option>
-              <option value="&#x272D;&#x272D;">&#x272D;&#x272D;</option>
-              <option value="&#x272D;&#x272D;&#x272D;">&#x272D;&#x272D;&#x272D;</option>
-              <option value="&#x272D;&#x272D;&#x272D;&#x272D;">&#x272D;&#x272D;&#x272D;&#x272D;</option>
-              <option value="&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
+              <option value=""> Rating </option>
+              <option value="1">&#x272D;</option>
+              <option value="2">&#x272D;&#x272D;</option>
+              <option value="3">&#x272D;&#x272D;&#x272D;</option>
+              <option value="4">&#x272D;&#x272D;&#x272D;&#x272D;</option>
+              <option value="5">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
             </select>
 
           </div> <!-- END CLASS FORM GROUP -->
@@ -34,9 +35,7 @@
       </div> <!-- END Container -->
     </nav> <!-- END NAVBAR -->
 
-
-    <h1>Search#location</h1>
-    <p>Find me in app/views/search/location.html.erb</p>
+    <!-- dipslay all reviews -->
     <table class="table">
     <thead>
       <tr>
@@ -56,13 +55,13 @@
     </thead>
 
     <tbody>
-        <% @reviews.each do |review| %>
+        <% @search_results.each do |review| %>
         <tr>
           <td><%= review.restaurant_name %></td>
           <td><%= review.cuisine %></td>
           <td><%= review.dish %></td>
           <td><%= review.price %></td>
-          <td><%= review.rating %></td>
+          <td><% review.rating.times { %> &#x272D; <% } %></td>
           <td><%= review.street %></td>
           <td><%= review.city %></td>
           <td><%= review.state %></td>

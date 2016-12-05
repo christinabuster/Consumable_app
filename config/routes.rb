@@ -4,14 +4,12 @@ Rails.application.routes.draw do
   devise_for :users
   get 'search/search_by'
 
-
-
   get 'search/cuisine'
 
   get 'search/rating'
-  #
-  # get 'search/price'
-  #
+
+  get 'search/price'
+  
   get 'search/location'
 
   # Set landing page
@@ -26,6 +24,8 @@ Rails.application.routes.draw do
   get 'users/sign_up'
 
   get 'search/new_search'
+
+  get 'serch/search_all'
 
   resources :profiles
   # resources :reviews
