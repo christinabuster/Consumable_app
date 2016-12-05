@@ -22,9 +22,9 @@ RSpec.feature "LandingPages", type: :feature do
         fill_in('user_password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
         click_button('Sign up')
-        expect(current_path).to eq('/')
         expect(page).to have_content("Consumable")
         expect(page).to have_content ("@")
+        expect(page).to have_content ("Birthday")
       end
     end
 
@@ -39,9 +39,9 @@ RSpec.feature "LandingPages", type: :feature do
         fill_in('user_password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
         click_button('Sign up')
-        expect(current_path).to eq('/')
         expect(page).to have_content("Consumable")
         expect(page).to have_content ("@")
+        expect(page).to have_content ("Birthday")
       end
 
       Then 'I am logged out' do

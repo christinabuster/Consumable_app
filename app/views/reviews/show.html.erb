@@ -1,0 +1,73 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @review.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @review.longitude %>
+</p>
+
+<p>
+  <strong>Restaurant name:</strong>
+  <%= @review.restaurant_name %>
+</p>
+
+<p>
+  <strong>Cuisine:</strong>
+  <%= @review.cuisine %>
+</p>
+
+<p>
+  <strong>Dish:</strong>
+  <%= @review.dish %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @review.price %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <% @review.rating %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @review.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @review.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @review.state %>
+</p>
+
+<p>
+  <strong>Postalcode:</strong>
+  <%= @review.postalcode %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @review.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @review.user.email %>
+</p>
+
+<!-- div contains google map -->
+<div id="restaurant_map" data-review-id="<%=@review.id%>">Google Map will appear here...</div>
+
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

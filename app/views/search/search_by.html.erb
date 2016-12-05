@@ -1,0 +1,60 @@
+<!-- NAVBAR -->
+<!-- NAVIGATION ELEMENTS -->
+<nav class="navbar navbar-custom">
+  <div class="container">
+    <!-- Navbar Header and Branding -->
+    <p class="navbar-text navbar-left">Search Reviews</p>
+    <!-- SEARCH FIELDS -->
+    <form class="navbar-form navbar-left" role="search" action="/search/price" method="get">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search by Cuisine" name="cuisine">
+        <input type="text" class="form-control" placeholder="Search by Location" name="postal">
+
+        <!-- Single button -->
+        <select class="selectpicker" name="price">
+          <option value="nil">Price</option>
+          <option value="10">$1-$10</option>
+          <option value="20">$11-$20</option>
+          <option value="30">$21-$30</option>
+          <option value="41 +">$41 - up</option>
+        </select>
+
+        <select class="selectpicker" name="review_rating" >
+          <option value="nil">Rating</option>
+          <option value="1">&#x272D;</option>
+          <option value="2">&#x272D;&#x272D;</option>
+          <option value="3">&#x272D;&#x272D;&#x272D;</option>
+          <option value="4">&#x272D;&#x272D;&#x272D;&#x272D;</option>
+          <option value="5">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
+        </select>
+
+      </div> <!-- END CLASS FORM GROUP -->
+      <button type="submit" class="btn btn-info nav" id="search_by">Find It</button>
+    </form>
+    <!-- END SEARCH FIELDS -->
+
+  </div> <!-- END Container -->
+</nav> <!-- END NAVBAR -->
+
+<h1>Search#location</h1>
+<p>Find me in app/views/search/location.html.erb</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Restaurant name</th>
+      <th>Cuisine</th>
+      <th>Dish</th>
+      <th>Price</th>
+      <th>Rating</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postalcode</th>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+</table>
