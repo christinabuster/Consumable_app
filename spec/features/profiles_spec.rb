@@ -17,15 +17,14 @@ RSpec.feature "ProfilePage", type: :feature do
         click_link('sign_up')
         expect(page).to have_content("Sign up")
       end
-      Then 'I can sign up, create a profile and view it' do
+      Then 'I can sign up, create a profile automatically and view it' do
         fill_in('Email', :with => 'test@gmail.com')
         fill_in('user_password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
         click_button('Sign up')
-        expect(page).to have_content("Consumable")
+        expect(page).to have_content("New Profile")
         expect(page).to have_content ("@")
-        expect(page).to have_content ("Birthday")
-        click_link('New Profile')
+        expect(page).to have_content ("About me")
         fill_in('Name', :with => 'Test')
         select "2011", :from => "profile_birthday_1i"
         select "November", :from => "profile_birthday_2i"
