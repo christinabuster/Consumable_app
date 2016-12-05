@@ -23,7 +23,8 @@
   <tbody>
     <% @reviews.each do |review| %>
     <tr>
-      <td><%= review.restaurant_name %></td>
+      <!--this link_to will link you to specific restaurant just click the restaurant_name list with review_path(review) -->
+      <td><%= link_to review.restaurant_name, review_path(review) %></td>
       <td><%= review.cuisine %></td>
       <td><%= review.dish %></td>
       <td><%= review.price %></td>
@@ -34,6 +35,7 @@
       <td><%= review.postalcode %></td>
       <td><%= review.description %></td>
       <td><%= review.user.email %></td>
+
     </tr>
     <% end %>
   </tbody>
