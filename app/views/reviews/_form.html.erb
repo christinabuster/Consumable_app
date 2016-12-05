@@ -63,10 +63,12 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <!-- User id field hidden and automatically fill-in by current user id -->
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
+
   <div class="actions" id="create_review">
     <%= f.submit %>
   </div>
