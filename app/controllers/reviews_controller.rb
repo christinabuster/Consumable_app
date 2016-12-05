@@ -5,6 +5,8 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @reviews = Review.all
+    # assign review to current_user
+    @user = User.find(current_user.id)
   end
 
   # GET /reviews/1
