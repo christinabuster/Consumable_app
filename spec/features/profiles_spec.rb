@@ -32,6 +32,8 @@ RSpec.feature "ProfilePage", type: :feature do
         fill_in('About me', :with => 'Im am older than 5')
         click_button('Create Profile')
         expect(page).to have_content("Profile was successfully created.")
+        expect(page).to have_content("2011")
+        expect(page).to have_content("Im am older than 5")
         click_link('Logout')
         click_link('Log In')
         fill_in('user_email', :with => 'test@gmail.com')
