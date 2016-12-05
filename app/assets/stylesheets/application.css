@@ -31,3 +31,12 @@
   color: 		#32CD32; /*Change active text color here*/
   font-weight: bold;
 }
+
+.logintext{
+  color: white;
+}
+
+.signuptext{
+  color:#32CD32
+
+}
