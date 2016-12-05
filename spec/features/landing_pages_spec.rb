@@ -8,13 +8,12 @@ RSpec.feature "LandingPages", type: :feature do
       end # Given
       Then 'I see Welcome to Consumable' do
         expect(page).to have_content ("Welcome to Consumable")
-        expect(page).to have_content ("Restaurants")
         expect(page).to have_content ("My Profile")
         expect(page).to have_content ("My Wishlist")
         expect(page).to have_content ("Search By")
         expect(page).to have_content ("Log In")
         expect(page).to have_content ("Sign Up")
-    
+
       end #Then
     end # Steps
   end # Context
