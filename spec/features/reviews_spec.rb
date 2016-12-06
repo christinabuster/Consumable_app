@@ -41,7 +41,6 @@ RSpec.feature "Reviews", type: :feature do
         attach_file "review_image", Rails.root + "/Users/learn/desktop/Consumable_app/app/assets/images/friedchicken.jpg"
         find('#create_review').click
         expect(page).to have_content('The chicken was very tasty')
-
       end
     end
   end

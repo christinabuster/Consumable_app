@@ -13,6 +13,7 @@ RSpec.describe Review, type: :model do
     review1.state = "California"
     review1.postalcode = "92116"
     review1.description = "It was wonderful"
+    review1.image_file_name = "test.jpg"
     expect(review1.save).to be true
   end
 end
