@@ -1,19 +1,35 @@
-<p id="notice"><%= notice %></p>
+<br>
+<br>
+<div class="section-heading">
+  <p id="notice"><%= notice %></p>
+</div>
+<br>
 
+<div class="section-heading">
 <p>
   <strong>Name:</strong>
   <%= @profile.name %>
 </p>
+</div>
+<br>
 
+<div class="section-heading">
 <p>
   <strong>Birthday:</strong>
   <%= @profile.birthday %>
 </p>
+</div>
+<br>
 
+<div class="section-heading">
 <p>
-  <strong>About me:</strong>
+<strong>About me:</strong>
   <%= @profile.about_me %>
 </p>
+</div>
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<br>
+<div class="section-heading">
+<h6><%= link_to 'Edit', edit_profile_path(@profile) %></h6>
+<!-- <h6><%= link_to 'Back', profiles_path %></h6> -->
+</div>
