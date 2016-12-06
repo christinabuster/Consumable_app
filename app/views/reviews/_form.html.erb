@@ -70,6 +70,7 @@
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
+  <!-- id not allowed in embedded ruby. when testing, do: '#create_review input' -->
   <div class="actions" id="create_review">
     <%= f.submit %>
   </div>

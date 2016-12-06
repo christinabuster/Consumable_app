@@ -7,29 +7,44 @@ RSpec.feature "SearchPages", type: :feature do
         visit '/'
       end
       Then 'I can see a welcome message' do
-        expect(page). to have_content ("Welcome to Consumable")
+        expect(page).to have_content ("Welcome to Consumable")
       end
     end
-#
-    Steps 'signup' do
-      Given 'I that I am on the sign up page' do
+
+    Steps 'to signup' do
+      Given 'that I am on the landing page' do
         visit '/'
         click_link('sign_up')
         expect(page).to have_content("Sign up")
       end
-      Then 'I can sign up' do
+      Then 'I can sign up, create a profile automatically and view it' do
         fill_in('Email', :with => 'test@gmail.com')
         fill_in('user_password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
         click_button('Sign up')
-        expect(current_path).to eq('/')
-        expect(page).to have_content("Consumable")
+        expect(page).to have_content("New Profile")
         expect(page).to have_content ("@")
+        expect(page).to have_content ("About me")
+        fill_in('Name', :with => 'Test')
+        select "2011", :from => "profile_birthday_1i"
+        select "November", :from => "profile_birthday_2i"
+        select "30", :from => "profile_birthday_3i"
+        fill_in('About me', :with => 'Im am older than 5')
+        click_button('Create Profile')
+        expect(page).to have_content("Profile was successfully created.")
+        expect(page).to have_content("2011")
+        expect(page).to have_content("Im am older than 5")
+        click_link('Logout')
+        click_link('Log In')
+        fill_in('user_email', :with => 'test@gmail.com')
+        fill_in('user_password', :with => 'password')
+        click_button('Log in')
+        expect(page).to have_content('2011')
+      end
+      Then 'i can add review' do
         find('#review').click
-        expect(page).to have_content ("Listing Reviews")
         find('#new_review').click
-        expect(page).to have_content ("New Review")
-        fill_in('review_restaurant_name', :with => 'popeyes')
+        fill_in('Restaurant name', :with => 'popeyes')
         fill_in('Cuisine', :with => 'Southern')
         fill_in('Dish', :with => 'fried chicken')
         fill_in('Price', :with => '$10')
@@ -39,44 +54,71 @@ RSpec.feature "SearchPages", type: :feature do
         fill_in('State', :with => 'fried chicken')
         fill_in('Postalcode', :with => '92123')
         fill_in('Description', :with => 'The chicken was very tasty')
-        fill_in('User', :with => '1')
-        find('#create_review').click
-        save_and_open_page
+        find('#create_review input').click
         expect(page).to have_content('The chicken was very tasty')
-        # find('#search_by').click
-        # expect(page).to have_content('Find It')
-        # fill_in('cuisine', :with => 'Southern')
-        # find('#find_it').click
-        # expect(page).to have_content('Southern')
+        find('#review').click
+        expect(page).to have_content('fried chicken')
       end
-    end
-  end
-#
-  # context 'Writing a review for a new dish' do
-  #   Steps 'input restaurant/dish information' do
-  #     Given 'I am on the user review page' do
-  #       visit '/reviews/new'
-  #     end
-  #     Then 'I can fill out the review form' do
-  #       fill_in('Restaurant name', :with => 'popeyes')
-  #       fill_in('Cuisine', :with => 'Southern')
-  #       fill_in('Dish', :with => 'fried chicken')
-  #       fill_in('Price', :with => '$10')
-  #       select "✭✭✭", :from => "review[rating]"
-  #       fill_in('Street', :with => '1550 Market st.')
-  #       fill_in('City', :with => 'San Diego')
-  #       fill_in('State', :with => 'fried chicken')
-  #       fill_in('Postalcode', :with => '92123')
-  #       fill_in('Description', :with => 'The chicken was very tasty')
-  #       fill_in('User', :with => '1')
-  #       find('#create_review').click
-  #       expect(page).to have_content('The chicken was very tasty')
-  #       find('#search_by').click
-  #       expect(page).to have_content('Find It')
-  #       fill_in('cuisine', :with => 'Southern')
-  #       find('#find_it').click
-  #       expect(page).to have_content('Southern')
-  #     end
-  #   end
-  # end
+
+      Then 'I can create another review' do
+        find('#review').click
+        find('#new_review').click
+        fill_in('Restaurant name', :with => 'Denny')
+        fill_in('Cuisine', :with => 'American')
+        fill_in('Dish', :with => 'pancakes')
+        fill_in('Price', :with => '$5')
+        select "✭✭✭✭", :from => "review[rating]"
+        fill_in('Street', :with => '1550 G st.')
+        fill_in('City', :with => 'San Diego')
+        fill_in('State', :with => 'california')
+        fill_in('Postalcode', :with => '91991')
+        fill_in('Description', :with => 'The pancake was very tasty')
+        find('#create_review input').click
+        expect(page).to have_content('The pancake was very tasty')
+        find('#review').click
+        expect(page).to have_content('fried chicken')
+        expect(page).to have_content('pancake')
+      end
+
+      Then 'I can create another review' do
+        find('#review').click
+        find('#new_review').click
+        fill_in('Restaurant name', :with => 'ihop')
+        fill_in('Cuisine', :with => 'American')
+        fill_in('Dish', :with => 'eggs')
+        fill_in('Price', :with => '$11')
+        select "✭✭✭✭", :from => "review[rating]"
+        fill_in('Street', :with => '1550 G st.')
+        fill_in('City', :with => 'San Diego')
+        fill_in('State', :with => 'california')
+        fill_in('Postalcode', :with => '92123')
+        fill_in('Description', :with => 'The pancake was very tasty')
+        find('#create_review input').click
+        expect(page).to have_content('The pancake was very tasty')
+        find('#review').click
+        expect(page).to have_content('fried chicken')
+        expect(page).to have_content('pancake')
+      end
+
+      Then 'I can search for reviews' do
+        find('#search_by').click
+        expect(page).to have_content('fried chicken')
+        fill_in('Search by Cuisine', :with => 'Southern')
+        find('#find_it').click
+        expect(page).to_not have_content('pancake')
+      end
+
+      Then 'I can search for multiple reviews' do
+        find('#search_by').click
+        expect(page).to have_content('fried chicken')
+        fill_in('Search by Cuisine', :with => 'Southern')
+        fill_in('Search by Location', :with => '92123')
+        find('#find_it').click
+        expect(page).to_not have_content('pancake')
+        expect(page).to_not have_content('eggs')
+        expect(page).to have_content('Southern')
+        save_and_open_page
+      end
+    end #Steps
+  end #context
 end # RSpec
