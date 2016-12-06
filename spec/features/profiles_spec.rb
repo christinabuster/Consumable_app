@@ -34,6 +34,7 @@ RSpec.feature "ProfilePage", type: :feature do
         expect(page).to have_content("Profile was successfully updated.")
         expect(page).to have_content("2011")
         expect(page).to have_content("Im am older than 5")
+        expect(page).to have_content("My Wishlist")
         click_link('Logout')
         visit '/'
         click_link('sign_up')
