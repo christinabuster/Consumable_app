@@ -36,7 +36,7 @@
   <div class="field">
     <%= f.label :rating %><br>
     <select class="selectpicker" name="review[rating]">
-      <option value="1;">&#x272D;</option>
+      <option value="1">&#x272D;</option>
       <option value="2">&#x272D;&#x272D;</option>
       <option value="3">&#x272D;&#x272D;&#x272D;</option>
       <option value="4">&#x272D;&#x272D;&#x272D;&#x272D;</option>
@@ -67,7 +67,7 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
-  <div class="actions" id="create_review">
-    <%= f.submit %>
+  <div class="actions">
+    <%= f.submit :id => "create_review" %>
   </div>
 <% end %>

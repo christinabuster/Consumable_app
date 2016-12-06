@@ -27,7 +27,7 @@
         <td><%= review.cuisine %></td>
         <td><%= review.dish %></td>
         <td><%= review.price %></td>
-        <td><%= review.rating %></td>
+        <td><% review.rating.times { %> &#x272D; <% } %></td>
         <td><%= review.street %></td>
         <td><%= review.city %></td>
         <td><%= review.state %></td>
@@ -44,4 +44,6 @@
 
 <br>
 
-<%= link_to 'New Review', new_review_path %>
+<div>
+  <%= link_to 'New Review', new_review_path, :id => "new_review" %>
+</div>
