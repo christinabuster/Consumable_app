@@ -4,7 +4,9 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
+    if user_signed_in?
     @user = User.find(current_user.id)
+    end
     @profiles = Profile.all
   end
 

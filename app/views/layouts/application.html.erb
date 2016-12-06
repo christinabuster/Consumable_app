@@ -51,10 +51,12 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
-          <li><a href="/profiles/<%= current_user.profile.id %>">My Profile</a></li>
+            <li><a href="/profiles/<%= current_user.profile.id %>">My Profile</a></li>
           <% end %>
-            <li><a href="/profiles">Profile</a></li>
+          <li><a href="/profiles">Profile</a></li>
+          <% if user_signed_in? %>
           <li><a href="#">My Wishlists</a></li>
+          <% end %>
           <li><a href="/reviews">Reviews</a></li>
           <li><a href="/search/search_by">Search By</a></li>
           <!-- Dropdown menu -->

@@ -47,5 +47,6 @@
 </table>
 
 <br>
-
-<h2><%= link_to 'Create Review', new_review_path %></h2>
+<% if !current_user.nil? %>
+  <h2><%= link_to 'Create Review', new_review_path %></h2>
+<% end %>

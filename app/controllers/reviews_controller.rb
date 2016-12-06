@@ -6,7 +6,9 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
     # assign review to current_user
+    if user_signed_in?
     @user = User.find(current_user.id)
+    end
   end
 
   # GET /reviews/1

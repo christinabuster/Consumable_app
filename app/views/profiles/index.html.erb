@@ -26,5 +26,7 @@
 
 <br>
 
+<% if user_signed_in?%>
 <%= link_to 'Edit Profile', edit_profile_path(@user.profile) %> <br/>
 <%= link_to 'New Profile', new_profile_path %>
+<% end %>
