@@ -50,11 +50,11 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="#">Restaurants</a></li>
           <li><a href="/profiles">My Profile</a></li>
           <li><a href="#">My Wishlists</a></li>
-          <li><a href="/reviews" id="review">Create Review</a></li>
-          <li><a href="/search/search_by" id="search_by">Search By</a></li>
+          <li><a href="/reviews" id="review">Reviews</a></li>
+          <li><a href="/search/search_by">Search By</a></li>
+
           <!-- Dropdown menu -->
           <!-- <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Search By<span class="caret"></span></a>
@@ -73,9 +73,9 @@
                 <div class="site-header-actions">
                   <!-- <input type="text" name="login_user_name" placeholder="User Name">
                   <input type="password" name="login_user_password" placeholder="Password"> -->
-                  <a class="btn btn-primary site-header-actions-btn" id="nav_log_in" href="/users/sign_in" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up">Log In</a>
-                  <a class="btn site-header-actions-btn mr-1" id="sign_up"
-                  href="/users/sign_up" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">Sign Up</a>
+                  <a class="btn btn-success site-header-actions-btn mr-1" id="nav_log_in" href="/users/sign_in" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up"><span class="logintext">Log In</span></a>
+                  <a class="btn btn-link" id="sign_up"
+                  href="/users/sign_up" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in"><span class="signuptext">Sign Up</span></a>
 
                   <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
 
@@ -88,10 +88,10 @@
       </div> <!-- END of Collapse -->
 
       <!-- Everything else contained -->
-      <%= yield %>
-
     </div> <!-- END Container -->
   </nav> <!-- END NAVBAR -->
+      <%= yield %>
+
 
 
 

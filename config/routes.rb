@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
   devise_for :users
+
   get 'search/search_by'
 
   get 'search/cuisine'
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
   get 'search/rating'
 
   get 'search/price'
-  
+
   get 'search/location'
 
   # Set landing page

@@ -35,7 +35,7 @@
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <select class="selectpicker" name="review[rating]">
+    <select class="selectpicker" name="review_rating">
       <option value="1">&#x272D;</option>
       <option value="2">&#x272D;&#x272D;</option>
       <option value="3">&#x272D;&#x272D;&#x272D;</option>
@@ -63,11 +63,13 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+    <!-- User id field hidden and automatically fill-in by current user id -->
+    <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
-  <div class="actions">
-    <%= f.submit :id => "create_review" %>
+
+  <div class="actions" id="create_review">
+    <%= f.submit %>
   </div>
 <% end %>

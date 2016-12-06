@@ -23,6 +23,7 @@ class SearchController < ApplicationController
     render :search_by
   end #def new_search
 
+
   def search_by
     @search_results = Review.all
   end
@@ -50,13 +51,3 @@ class SearchController < ApplicationController
 
   end
 end #end Class
-
-
-
-# #def new_search
-# # if there's a cuisine param, put it into an instance variable and send the user to the page that shows the results
-# # if there's a postal/location param, put it into an instance variable and send the user to the page that shows the results
-# # if there's a price param, put it into an instance variable and sent the user to the page that shows the results
-# # if there's a rating param, put it into an instance variable and send the user to the page that shows the results
-# # ELSE, show all the reviews on the index page
-# #end

@@ -22,28 +22,24 @@
 
   <tbody>
     <% @reviews.each do |review| %>
-      <tr>
-        <td><%= review.restaurant_name %></td>
-        <td><%= review.cuisine %></td>
-        <td><%= review.dish %></td>
-        <td><%= review.price %></td>
-        <td><% review.rating.times { %> &#x272D; <% } %></td>
-        <td><%= review.street %></td>
-        <td><%= review.city %></td>
-        <td><%= review.state %></td>
-        <td><%= review.postalcode %></td>
-        <td><%= review.description %></td>
-        <td><%= review.user.email %></td>
-        <td><%= link_to 'Show', review %></td>
-        <td><%= link_to 'Edit', edit_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <!--this link_to will link you to specific restaurant just click the restaurant_name list with review_path(review) -->
+      <td><%= link_to review.restaurant_name, review_path(review) %></td>
+      <td><%= review.cuisine %></td>
+      <td><%= review.dish %></td>
+      <td><%= review.price %></td>
+      <td><% review.rating.times { %> &#x272D; <% } %></td>
+      <td><%= review.street %></td>
+      <td><%= review.city %></td>
+      <td><%= review.state %></td>
+      <td><%= review.postalcode %></td>
+      <td><%= review.description %></td>
+      <td><%= review.user.email %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<div>
-  <%= link_to 'New Review', new_review_path, :id => "new_review" %>
-</div>
+<h2><%= link_to 'Create Review', new_review_path, :id => "new_review" %></h2>

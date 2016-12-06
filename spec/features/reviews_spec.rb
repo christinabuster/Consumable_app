@@ -22,31 +22,22 @@ RSpec.feature "Reviews", type: :feature do
         fill_in('user_password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
         click_button('Sign up')
-        expect(current_path).to eq('/')
         expect(page).to have_content("Consumable")
         expect(page).to have_content ("@")
-
-      end
-    end
-  end
-#
-  context 'Writing a review for a new dish' do
-    Steps 'input restaurant/dish information' do
-      Given 'I am on the user review page' do
+        expect(page).to have_content ("Birthday")
+        end
+      Then 'i can add review' do
         visit '/reviews/new'
-      end
-      Then 'I can fill out the review form' do
         fill_in('Restaurant name', :with => 'popeyes')
         fill_in('Cuisine', :with => 'Southern')
         fill_in('Dish', :with => 'fried chicken')
         fill_in('Price', :with => '$10')
-        select "✭✭✭", :from => "review[rating]"
+        select "✭✭✭", :from => "review_rating"
         fill_in('Street', :with => '1550 Market st.')
         fill_in('City', :with => 'San Diego')
         fill_in('State', :with => 'fried chicken')
         fill_in('Postalcode', :with => '92123')
         fill_in('Description', :with => 'The chicken was very tasty')
-        fill_in('User', :with => '1')
         find('#create_review').click
         expect(page).to have_content('The chicken was very tasty')
       end
