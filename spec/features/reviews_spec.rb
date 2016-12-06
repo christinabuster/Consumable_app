@@ -26,15 +26,8 @@ RSpec.feature "Reviews", type: :feature do
         expect(page).to have_content ("@")
         expect(page).to have_content ("Birthday")
       end
-    end
-  end
-#
-  context 'Writing a review for a new dish' do
-    Steps 'input restaurant/dish information' do
-      Given 'I am on the user review page' do
+      Then 'I can create a review with an image' do
         visit '/reviews/new'
-      end
-      Then 'I can fill out the review form' do
         fill_in('Restaurant name', :with => 'popeyes')
         fill_in('Cuisine', :with => 'Southern')
         fill_in('Dish', :with => 'fried chicken')
@@ -45,9 +38,10 @@ RSpec.feature "Reviews", type: :feature do
         fill_in('State', :with => 'fried chicken')
         fill_in('Postalcode', :with => '92123')
         fill_in('Description', :with => 'The chicken was very tasty')
-        fill_in('User', :with => '1')
+        attach_file "review_image", Rails.root + "/Users/learn/desktop/Consumable_app/app/assets/images/friedchicken.jpg"
         find('#create_review').click
         expect(page).to have_content('The chicken was very tasty')
+
       end
     end
   end

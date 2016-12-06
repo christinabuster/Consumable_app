@@ -1,4 +1,4 @@
-<%= form_for(@review) do |f| %>
+<%= form_for(@review) do  |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
@@ -65,10 +65,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
     <!-- User id field hidden and automatically fill-in by current user id -->
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
+  </br>
   <div class="actions" id="create_review">
     <%= f.submit %>
   </div>
