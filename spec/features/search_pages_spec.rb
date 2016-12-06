@@ -47,7 +47,7 @@ RSpec.feature "SearchPages", type: :feature do
         fill_in('Restaurant name', :with => 'popeyes')
         fill_in('Cuisine', :with => 'Southern')
         fill_in('Dish', :with => 'fried chicken')
-        fill_in('Price', :with => '$10')
+        fill_in('Price', :with => '10')
         select "✭✭✭", :from => "review[rating]"
         fill_in('Street', :with => '1550 Market st.')
         fill_in('City', :with => 'San Diego')
@@ -66,7 +66,7 @@ RSpec.feature "SearchPages", type: :feature do
         fill_in('Restaurant name', :with => 'Denny')
         fill_in('Cuisine', :with => 'American')
         fill_in('Dish', :with => 'pancakes')
-        fill_in('Price', :with => '$5')
+        fill_in('Price', :with => '5')
         select "✭✭✭✭", :from => "review[rating]"
         fill_in('Street', :with => '1550 G st.')
         fill_in('City', :with => 'San Diego')
@@ -86,7 +86,7 @@ RSpec.feature "SearchPages", type: :feature do
         fill_in('Restaurant name', :with => 'ihop')
         fill_in('Cuisine', :with => 'American')
         fill_in('Dish', :with => 'eggs')
-        fill_in('Price', :with => '$11')
+        fill_in('Price', :with => '11')
         select "✭✭✭✭", :from => "review[rating]"
         fill_in('Street', :with => '1550 G st.')
         fill_in('City', :with => 'San Diego')
