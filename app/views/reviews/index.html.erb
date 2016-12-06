@@ -27,7 +27,7 @@
       <td><%= link_to review.restaurant_name, review_path(review) %></td>
       <td><%= review.cuisine %></td>
       <td><%= review.dish %></td>
-      <td><%= review.price %></td>
+      <td>$<%= review.price %></td>
       <td><% review.rating.times { %> &#x272D; <% } %></td>
       <td><%= review.street %></td>
       <td><%= review.city %></td>
