@@ -1,3 +1,65 @@
 // Place all the styles related to the profiles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 24px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+
+h2 {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+#notice {
+  font-size: 24px;
+  color: red;
+
+}
+
+
+
+h6 {
+    background-color: #4CAF50;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#about_me, #birthday, #name {
+font-weight: bolder;
+font-size: 18px;
+
+
+}
+
+.panel {
+  background-color: #4CAF50;
+  text-align: center;
+  color: white;
+}
