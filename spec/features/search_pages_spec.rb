@@ -30,8 +30,8 @@ RSpec.feature "SearchPages", type: :feature do
         select "November", :from => "profile_birthday_2i"
         select "30", :from => "profile_birthday_3i"
         fill_in('About me', :with => 'Im am older than 5')
-        click_button('Create Profile')
-        expect(page).to have_content("Profile was successfully created.")
+        click_button('Update Profile')
+        expect(page).to have_content("Profile was successfully updated.")
         expect(page).to have_content("2011")
         expect(page).to have_content("Im am older than 5")
         click_link('Logout')
@@ -100,6 +100,22 @@ RSpec.feature "SearchPages", type: :feature do
         expect(page).to have_content('pancake')
       end
 
+      Then "I can't create a review without selecting a rating" do
+        find('#review').click
+        find('#new_review').click
+        fill_in('Restaurant name', :with => 'Olive Garden')
+        fill_in('Cuisine', :with => 'Italian')
+        fill_in('Dish', :with => 'Pasta')
+        fill_in('Price', :with => '18')
+        fill_in('Street', :with => '1550 b st.')
+        fill_in('City', :with => 'San Diego')
+        fill_in('State', :with => 'california')
+        fill_in('Postalcode', :with => '92126')
+        fill_in('Description', :with => 'The pasta was very tasty')
+        find('#create_review input').click
+        expect(page).to have_content("Rating can't be blank")
+      end
+
       Then 'I can search for reviews' do
         find('#search_by').click
         expect(page).to have_content('fried chicken')
@@ -117,7 +133,6 @@ RSpec.feature "SearchPages", type: :feature do
         expect(page).to_not have_content('pancake')
         expect(page).to_not have_content('eggs')
         expect(page).to have_content('Southern')
-        save_and_open_page
       end
     end #Steps
   end #context
