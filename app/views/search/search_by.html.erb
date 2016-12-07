@@ -3,7 +3,7 @@
 <nav class="navbar navbar-custom">
   <div class="container">
     <!-- Navbar Header and Branding -->
-    <p class="navbar-text navbar-left">Search Reviews</p>
+    <p class="navbar-text navbar-left" id="nav-text">Search Reviews</p>
     <!-- SEARCH FIELDS -->
     <form class="navbar-form navbar-left" role="search" action="/search/new_search" method="get">
       <div class="form-group">
@@ -11,7 +11,7 @@
         <input type="text" class="form-control" placeholder="Search by Location" name="postal">
 
         <!-- Single button -->
-        <select class="selectpicker" name="price">
+        <select class="selectpicker second" name="price">
           <option value="">Price</option>
           <option value="10">$1-$10</option>
           <option value="20">$11-$20</option>
@@ -19,7 +19,7 @@
           <option value="41 +">$41 - up</option>
         </select>
 
-        <select class="selectpicker" name="rating" >
+        <select class="selectpicker third" name="rating" >
           <option value="">Rating</option>
           <option value="1">&#x272D;</option>
           <option value="2">&#x272D;&#x272D;</option>
@@ -28,8 +28,10 @@
           <option value="5">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
         </select>
 
+        <button type="submit" class="btn-1 btn-info nav" id="find_it">Find It</button>
+
       </div> <!-- END CLASS FORM GROUP -->
-      <button type="submit" class="btn btn-info nav" id="find_it">Find It</button>
+
     </form>
     <!-- END SEARCH FIELDS -->
 
