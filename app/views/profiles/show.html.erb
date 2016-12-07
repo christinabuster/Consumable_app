@@ -33,3 +33,55 @@
 <h6><%= link_to 'Edit', edit_profile_path(@profile) %></h6>
 <!-- <h6><%= link_to 'Back', profiles_path %></h6> -->
 </div>
+<hr>
+<div class="section-heading">
+<h1>My Reviews</h1>
+</div>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Restaurant name</th>
+      <th>Cuisine</th>
+      <th>Dish</th>
+      <th>Price</th>
+      <th>Rating</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Postalcode</th>
+      <th>Description</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <!--current user has many reviews  -->
+    <% current_user.reviews.each do |review| %>
+    <tr>
+      <td><%= image_tag review.image.url(:small) %></td>
+      <!--this link_to will link you to specific restaurant just click the restaurant_name list with review_path(review) -->
+      <td><%= link_to review.restaurant_name, review_path(review) %></td>
+
+      <td><%= review.cuisine %></td>
+      <td><%= review.dish %></td>
+      <td>$<%= review.price %></td>
+      <td><% review.rating.times { %> &#x272D; <% } %></td>
+      <td><%= review.street %></td>
+      <td><%= review.city %></td>
+      <td><%= review.state %></td>
+      <td><%= review.postalcode %></td>
+      <td><%= review.description %></td>
+      <td><%= review.user.email %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<% if !current_user.nil? %>
+<h2><%= link_to 'Create Review', new_review_path, :id => "new_review" %></h2>
+<% end %>

@@ -71,7 +71,22 @@ RSpec.feature "ProfilePage", type: :feature do
         click_link("My Profile")
         expect(page).to have_content("2011")
         expect(page).to have_content("Im am older than 5")
-
+      end
+      Then 'I can create a review with an image' do
+        visit '/reviews/new'
+        fill_in('Restaurant name', :with => 'popeyes')
+        fill_in('Cuisine', :with => 'Southern')
+        fill_in('Dish', :with => 'fried chicken')
+        fill_in('Price', :with => '$10')
+        select "✭✭✭", :from => "review[rating]"
+        fill_in('Street', :with => '1550 Market st.')
+        fill_in('City', :with => 'San Diego')
+        fill_in('State', :with => 'fried chicken')
+        fill_in('Postalcode', :with => '92123')
+        fill_in('Description', :with => 'The chicken was very tasty')
+        attach_file "review_image", Rails.root + "/Users/learn/desktop/Consumable_app/app/assets/images/friedchicken.jpg"
+        find('#create_review').click
+        expect(page).to have_content('The chicken was very tasty')
       end
     end #Steps
   end #context
