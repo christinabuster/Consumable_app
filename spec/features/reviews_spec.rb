@@ -26,6 +26,15 @@ RSpec.feature "Reviews", type: :feature do
         expect(page).to have_content ("@")
         expect(page).to have_content ("Birthday")
       end
+      Then 'I can creste a profile' do
+        attach_file "profile_image", Rails.root + "/Users/learn/desktop/Consumable_app/app/assets/images/friedchicken.jpg"
+        fill_in('Name', :with => 'Test')
+        select "2011", :from => "profile_birthday_1i"
+        select "November", :from => "profile_birthday_2i"
+        select "30", :from => "profile_birthday_3i"
+        fill_in('About me', :with => 'Im am older than 5')
+        click_button('Create Profile')
+      end
       Then 'I can create a review with an image' do
         visit '/reviews/new'
         fill_in('Restaurant name', :with => 'popeyes')
