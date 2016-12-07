@@ -1,5 +1,4 @@
-<h1>Search#location</h1>
-<p>Find me in app/views/search/location.html.erb</p>
+<h1>Search Results</h1>
 <table class="table">
 <thead>
   <tr>
@@ -19,7 +18,7 @@
 </thead>
 
 <tbody>
-    <% @reviews.each do |review| %>
+    <% @location_searches.each do |review| %>
     <tr>
       <td><%= review.restaurant_name %></td>
       <td><%= review.cuisine %></td>

@@ -5,22 +5,22 @@
     <!-- Navbar Header and Branding -->
     <p class="navbar-text navbar-left">Search Reviews</p>
     <!-- SEARCH FIELDS -->
-    <form class="navbar-form navbar-left" role="search" action="/search/price" method="get">
+    <form class="navbar-form navbar-left" role="search" action="/search/new_search" method="get">
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search by Cuisine" name="cuisine">
         <input type="text" class="form-control" placeholder="Search by Location" name="postal">
 
         <!-- Single button -->
         <select class="selectpicker" name="price">
-          <option value="nil">Price</option>
+          <option value="">Price</option>
           <option value="10">$1-$10</option>
           <option value="20">$11-$20</option>
           <option value="30">$21-$30</option>
           <option value="41 +">$41 - up</option>
         </select>
 
-        <select class="selectpicker" name="review_rating" >
-          <option value="nil">Rating</option>
+        <select class="selectpicker" name="rating" >
+          <option value="">Rating</option>
           <option value="1">&#x272D;</option>
           <option value="2">&#x272D;&#x272D;</option>
           <option value="3">&#x272D;&#x272D;&#x272D;</option>
@@ -29,15 +29,14 @@
         </select>
 
       </div> <!-- END CLASS FORM GROUP -->
-      <button type="submit" class="btn btn-info nav" id="search_by">Find It</button>
+      <button type="submit" class="btn btn-info nav" id="find_it">Find It</button>
     </form>
     <!-- END SEARCH FIELDS -->
 
   </div> <!-- END Container -->
 </nav> <!-- END NAVBAR -->
 
-<h1>Search#location</h1>
-<p>Find me in app/views/search/location.html.erb</p>
+<!-- dipslay all reviews -->
 <table class="table">
   <thead>
     <tr>
@@ -57,4 +56,23 @@
   </thead>
 
   <tbody>
+    <% @search_results.each do |review| %>
+    <tr>
+      <td><%= review.restaurant_name %></td>
+      <td><%= review.cuisine %></td>
+      <td><%= review.dish %></td>
+      <td>$<%= review.price %></td>
+      <td><% review.rating.times { %> &#x272D; <% } %></td>
+      <td><%= review.street %></td>
+      <td><%= review.city %></td>
+      <td><%= review.state %></td>
+      <td><%= review.postalcode %></td>
+      <td><%= review.description %></td>
+      <td><%= review.user.email %></td>
+      <td><%= link_to 'Show', review %></td>
+      <td><%= link_to 'Edit', edit_review_path(review) %></td>
+      <td><%= link_to 'Destroy', review, method: :delete, data: {confirm: 'Are you sure'} %></td>
+    </tr>
+    <% end %>
+  </tbody>
 </table>
