@@ -4,7 +4,10 @@ class ProfilesController < ApplicationController
   # GET /profiles
   # GET /profiles.json
   def index
+    if user_signed_in?
     @user = User.find(current_user.id)
+    end
+    @profiles = Profile.all
   end
 
   # GET /profiles/1
@@ -13,30 +16,35 @@ class ProfilesController < ApplicationController
     # @user = User.find(current_user.id)
   end
 
+
+# INSTEAD OF CRETING A NEW PROFILE USERS WILL UPDATE THE ON CREATED AT SIGN UP
   # GET /profiles/new
   def new
-    @profile = Profile.new
+    @profile = User.find(current_user.id).profile
   end
 
   # GET /profiles/1/edit
   def edit
   end
 
+
+
+# PROFILE IS ALREADY BEING CREATED WHEN USERS SIGN UP
   # POST /profiles
   # POST /profiles.json
-  def create
-    @profile = Profile.new(profile_params)
-
-    respond_to do |format|
-      if @profile.save
-        format.html { redirect_to profiles_path, notice: 'Profile was successfully created.' }
-        format.json { render :show, status: :created, location: @profile }
-      else
-        format.html { render :new }
-        format.json { render json: @profile.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def create
+  #   @profile = Profile.new(profile_params)
+  #
+  #   respond_to do |format|
+  #     if @profile.save
+  #       format.html { redirect_to profiles_path, notice: 'Profile was successfully created.' }
+  #       format.json { render :show, status: :created, location: @profile }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @profile.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json

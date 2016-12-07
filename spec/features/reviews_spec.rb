@@ -25,8 +25,8 @@ RSpec.feature "Reviews", type: :feature do
         expect(page).to have_content("Consumable")
         expect(page).to have_content ("@")
         expect(page).to have_content ("Birthday")
-        end
-      Then 'i can add review' do
+      end
+      Then 'I can create a review with an image' do
         visit '/reviews/new'
         fill_in('Restaurant name', :with => 'popeyes')
         fill_in('Cuisine', :with => 'Southern')
@@ -38,6 +38,7 @@ RSpec.feature "Reviews", type: :feature do
         fill_in('State', :with => 'fried chicken')
         fill_in('Postalcode', :with => '92123')
         fill_in('Description', :with => 'The chicken was very tasty')
+        attach_file "review_image", Rails.root + "/Users/learn/desktop/Consumable_app/app/assets/images/friedchicken.jpg"
         find('#create_review').click
         expect(page).to have_content('The chicken was very tasty')
       end
