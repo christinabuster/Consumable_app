@@ -10,7 +10,6 @@ RSpec.feature "ProfilePage", type: :feature do
         expect(page).to have_content ("Welcome to Consumable")
       end
     end
-
     Steps 'to signup' do
       Given 'that I am on the landing page' do
         visit '/'
@@ -75,7 +74,38 @@ RSpec.feature "ProfilePage", type: :feature do
         click_link("My Profile")
         expect(page).to have_content("2011")
         expect(page).to have_content("Im am older than 5")
-
+      end
+      Then 'I can create a review with an image' do
+        visit '/reviews/new'
+        fill_in('Restaurant name', :with => 'popeyes')
+        fill_in('Cuisine', :with => 'Southern')
+        fill_in('Dish', :with => 'fried chicken')
+        fill_in('Price', :with => '$10')
+        select "✭✭✭", :from => "review[rating]"
+        fill_in('Street', :with => '1550 Market st.')
+        fill_in('City', :with => 'San Diego')
+        fill_in('State', :with => 'fried chicken')
+        fill_in('Postalcode', :with => '92123')
+        fill_in('Description', :with => 'The chicken was very tasty')
+        attach_file "review_image", Rails.root + "/Users/learn/desktop/Consumable_app/app/assets/images/friedchicken.jpg"
+        find('#create_review').click
+        expect(page).to have_content('The chicken was very tasty')
+      end
+      Then "When I click My Profile I can view my reviews" do
+        click_link("My Profile")
+        expect(page).to have_content("Image")
+        expect(page).to have_content("Restaurant name")
+        expect(page).to have_content("Cuisine")
+        expect(page).to have_content("Dish")
+        expect(page).to have_content("Price")
+        expect(page).to have_content("Rating")
+        expect(page).to have_content("Street")
+        expect(page).to have_content("City")
+        expect(page).to have_content("State")
+        expect(page).to have_content("Postalcode")
+        expect(page).to have_content("Description")
+        expect(page).to have_content("User")
+        click_link("Create Review")
       end
     end #Steps
   end #context
