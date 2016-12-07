@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if @user.profile.name.nil?
       new_profile_path
     else
-      profiles_path
+      root_path
     end
   end
 end
