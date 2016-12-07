@@ -24,9 +24,7 @@
   <tbody>
     <% @reviews.each do |review| %>
     <tr>
-      <td><%= image_tag review.image.url %></td>
-      <td><%= review.restaurant_name %></td>
-
+      <td><%= image_tag review.image.url(:small) %></td>
       <!--this link_to will link you to specific restaurant just click the restaurant_name list with review_path(review) -->
       <td><%= link_to review.restaurant_name, review_path(review) %></td>
 
