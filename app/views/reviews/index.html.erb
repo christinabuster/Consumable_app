@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Reviews</h1>
-
+<%= @reviews.count  %> sdfa
 <table class="table">
   <thead>
     <tr>
@@ -32,21 +32,21 @@
 
       <td><%= review.cuisine %></td>
       <td><%= review.dish %></td>
-      <td><%= review.price %></td>
-      <td><%= review.rating %></td>
+      <td>$<%= review.price %></td>
+      <td><% review.rating.times { %> &#x272D; <% } %></td>
       <td><%= review.street %></td>
       <td><%= review.city %></td>
       <td><%= review.state %></td>
       <td><%= review.postalcode %></td>
       <td><%= review.description %></td>
       <td><%= review.user.email %></td>
-
     </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
 <% if !current_user.nil? %>
-  <h2><%= link_to 'Create Review', new_review_path %></h2>
+<h2><%= link_to 'Create Review', new_review_path, :id => "new_review" %></h2>
 <% end %>

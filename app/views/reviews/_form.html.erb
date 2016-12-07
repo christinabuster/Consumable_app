@@ -35,7 +35,8 @@
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <select class="selectpicker" name="review_rating">
+    <select class="selectpicker" name="review[rating]">
+      <option value="">Rating</option>
       <option value="1">&#x272D;</option>
       <option value="2">&#x272D;&#x272D;</option>
       <option value="3">&#x272D;&#x272D;&#x272D;</option>
@@ -75,6 +76,7 @@
   </div>
 
   </br>
+  <!-- id not allowed in embedded ruby. when testing, do: '#create_review input' -->
   <div class="actions" id="create_review">
     <%= f.submit %>
   </div>
