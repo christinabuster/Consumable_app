@@ -10,7 +10,6 @@ RSpec.feature "ProfilePage", type: :feature do
         expect(page).to have_content ("Welcome to Consumable")
       end
     end
-
     Steps 'to signup' do
       Given 'that I am on the landing page' do
         visit '/'
@@ -87,6 +86,22 @@ RSpec.feature "ProfilePage", type: :feature do
         attach_file "review_image", Rails.root + "/Users/learn/desktop/Consumable_app/app/assets/images/friedchicken.jpg"
         find('#create_review').click
         expect(page).to have_content('The chicken was very tasty')
+      end
+      Then "When I click My Profile I can view my reviews" do
+        click_link("My Profile")
+        expect(page).to have_content("Image")
+        expect(page).to have_content("Restaurant name")
+        expect(page).to have_content("Cuisine")
+        expect(page).to have_content("Dish")
+        expect(page).to have_content("Price")
+        expect(page).to have_content("Rating")
+        expect(page).to have_content("Street")
+        expect(page).to have_content("City")
+        expect(page).to have_content("State")
+        expect(page).to have_content("Postalcode")
+        expect(page).to have_content("Description")
+        expect(page).to have_content("User")
+        click_link("Create Review")
       end
     end #Steps
   end #context
