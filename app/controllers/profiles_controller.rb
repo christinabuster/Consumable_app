@@ -5,7 +5,7 @@ class ProfilesController < ApplicationController
   # GET /profiles.json
   def index
     if user_signed_in?
-    @user = User.find(current_user.id)
+    @user = current_user
     end
     @profiles = Profile.all
   end
@@ -20,32 +20,34 @@ class ProfilesController < ApplicationController
 # INSTEAD OF CRETING A NEW PROFILE USERS WILL UPDATE THE ON CREATED AT SIGN UP
   # GET /profiles/new
   def new
-    @profile = User.find(current_user.id).profile
+    @profile = current_user.build_profile
   end
 
   # GET /profiles/1/edit
   def edit
-  
+
   end
 
 
 
 # PROFILE IS ALREADY BEING CREATED WHEN USERS SIGN UP
+# or is it???
   # POST /profiles
   # POST /profiles.json
-  # def create
-  #   @profile = Profile.new(profile_params)
-  #
-  #   respond_to do |format|
-  #     if @profile.save
-  #       format.html { redirect_to profiles_path, notice: 'Profile was successfully created.' }
-  #       format.json { render :show, status: :created, location: @profile }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @profile.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def create
+    @profile = Profile.new(profile_params)
+    @profile.user = current_user
+
+    respond_to do |format|
+      if @profile.save
+        format.html { redirect_to profiles_path, notice: 'Profile was successfully created.' }
+        format.json { render :show, status: :created, location: @profile }
+      else
+        format.html { render :new }
+        format.json { render json: @profile.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # PATCH/PUT /profiles/1
   # PATCH/PUT /profiles/1.json
@@ -79,6 +81,6 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:name, :birthday, :about_me, :user_id)
+      params.require(:profile).permit(:name, :birthday, :about_me, :user_id, :image)
     end
 end

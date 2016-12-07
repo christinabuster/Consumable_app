@@ -6,26 +6,27 @@
 <br>
 
 <div class="section-heading">
-<p>
-  <strong>Name:</strong>
-  <%= @profile.name %>
-</p>
+  <p>
+    <%= link_to image_tag(@profile.image.url(:large)), @profile.image.url %>
+    <strong>Name:</strong>
+    <%= @profile.name %>
+  </p>
 </div>
 <br>
 
 <div class="section-heading">
-<p>
-  <strong>Birthday:</strong>
-  <%= @profile.birthday %>
-</p>
+  <p>
+    <strong>Birthday:</strong>
+    <%= @profile.birthday %>
+  </p>
 </div>
 <br>
 
 <div class="section-heading">
-<p>
-<strong>About me:</strong>
-  <%= @profile.about_me %>
-</p>
+  <p>
+    <strong>About me:</strong>
+    <%= @profile.about_me %>
+  </p>
 </div>
 
 <br>
