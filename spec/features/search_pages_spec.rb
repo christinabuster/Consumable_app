@@ -40,7 +40,7 @@ RSpec.feature "SearchPages", type: :feature do
         fill_in('user_email', :with => 'test@gmail.com')
         fill_in('user_password', :with => 'password')
         click_button('Log in')
-        expect(page).to have_content('2011')
+        expect(page).to have_content('My Profile')
       end
       Then 'i can add review' do
         find('#review').click
