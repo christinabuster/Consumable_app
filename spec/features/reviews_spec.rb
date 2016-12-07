@@ -7,7 +7,7 @@ RSpec.feature "Reviews", type: :feature do
         visit '/'
       end
       Then 'I can see a welcome message' do
-        expect(page). to have_content ("Welcome to Consumable")
+        expect(page).to have_content ("Welcome to Consumable")
       end
     end
 #

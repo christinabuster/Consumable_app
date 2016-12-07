@@ -52,12 +52,12 @@
         <ul class="nav navbar-nav">
           <% if user_signed_in? %>
             <li><a href="/profiles/<%= current_user.profile.id %>">My Profile</a></li>
-          <% end %>
-          <li><a href="/profiles">Profile</a></li>
-          <% if user_signed_in? %>
-          <li><a href="#">My Wishlists</a></li>
-          <li><a href="/reviews" id="review">Reviews</a></li>
-          <li><a href="/search/search_by" id="search_by">Search By</a></li>
+            <li><a href="#">My Wishlists</a></li>
+            <li><a href="/reviews" id="review">Reviews</a></li>
+            <li><a href="/search/search_by" id="search_by">Search By</a></li>
+          <% else %>
+            <li><a href="/profiles">Profile</a></li>
+            <li><a href="/reviews" id="review">Reviews</a></li>
           <% end %>
 
           <!-- Dropdown menu -->
