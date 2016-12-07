@@ -69,9 +69,8 @@ RSpec.feature "ProfilePage", type: :feature do
         expect(page).to have_content('Logout')
         expect(page).to have_content('2011')
         click_link("My Profile")
-        save_and_open_page
         expect(page).to have_content("2011")
-        expect(page).to have_content("Im am older than 5i")
+        expect(page).to have_content("Im am older than 5")
 
       end
     end #Steps
