@@ -6,7 +6,9 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.all
     # assign review to current_user
+    if user_signed_in?
     @user = User.find(current_user.id)
+    end
   end
 
   # GET /reviews/1
@@ -82,6 +84,6 @@ class ReviewsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def review_params
-    params.require(:review).permit(:latitude, :longitude, :restaurant_name, :cuisine, :dish, :price, :rating, :street, :city, :state, :postalcode, :description, :user_id)
+    params.require(:review).permit(:latitude, :longitude, :restaurant_name, :cuisine, :dish, :price, :rating, :street, :city, :state, :postalcode, :description, :user_id, :image)
   end
 end

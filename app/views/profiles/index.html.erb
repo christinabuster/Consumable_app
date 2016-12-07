@@ -17,85 +17,21 @@
   </thead>
   </div>
   <tbody>
-      <tr>
-        <td><%= @user.profile.name %></td>
-        <td><%= @user.profile.birthday %></td>
-        <td><%= @user.profile.about_me %></td>
-
-      </tr>
+    <% @profiles.each do |profile| %>
+    <tr>
+      <td><%= profile.name %></td>
+      <td><%= profile.birthday %></td>
+      <td><%= profile.about_me %></td>
+    </tr>
+    <% end %>
   </tbody>
 </table>
 
 <br>
 
-
-
-
-<!-- CONTACT -->
-      <!-- <div class="container-fluid">
-        <div id="contact" class="section contact">
-            <div class="section-heading">
-              <div class="panel panel-success">
-                <h1>My Profile</h1>
-                    </div>
-                <hr />
-            </div>
-            <div class="section-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="contact-info">
-                                <ul class="list-unstyled">
-
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="contact-form">
-                                <div class="alert"></div>
-                                <form id="contact-form" method="post" role="form" novalidate>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="sr-only" for="name">Name:</label>
-                                                <input type="text" id="name" class="form-control" name="name"
-                                                placeholder="<%= @user.profile.name %>" required>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label class="sr-only" for="birthday">Birthday:</label>
-                                                <input type="birthday" id="birthday" class="form-control" name="birthday" value="<%= @user.profile.birthday %>" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <div class="col-md-12"> -->
-                                      <!-- <div class="form-group">
-                                        <label class="sr-only" for="about_me">About Me:</label>
-                                        <textarea id="about_me" name="about_me" class="form-control" value="<%= @user.profile.about_me %>" required></textarea>
-                                      </div> -->
-                                    <!-- </div> -->
-
-                                    <!-- <a href="/profiles/<%=current_user.id%>/edit" type="submit" class="btn btn-success btn-lg" id="submit-button">
-                                        <i class="fa loading-icon"></i> <span>Edit Profile</span>
-                                    </a>
-                                    <input type="hidden" name="msg-submitted" id="msg-submitted" value="true"> -->
-                                    <!-- <div class="section-heading"> <h2><%= link_to 'Edit Profile', edit_profile_path(@user.profile) %></h2>
-                                      </div>
-
-
-
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-      <!-- </div> <!--End of container -->
-        <!-- END CONTACT -->
-
-
-  <div class="section-heading"> <h6><%= link_to 'Edit Profile', edit_profile_path(@user.profile) %></h6> <br/>
- <!-- <%= link_to 'New Profile', new_profile_path %></div> -->
+  <div class="section-heading">
+    <h6>
+    <% if user_signed_in?%>
+    <%= link_to 'Edit Profile', edit_profile_path(@user.profile) %>
+    <% end %>
+    </h6> <br/>

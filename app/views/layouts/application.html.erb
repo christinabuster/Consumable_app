@@ -50,9 +50,13 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
-          <li><a href="/profiles">My Profile</a></li>
+          <% if user_signed_in? %>
+            <li><a href="/profiles/<%= current_user.profile.id %>">My Profile</a></li>
+          <% end %>
+          <li><a href="/profiles">Profile</a></li>
+          <% if user_signed_in? %>
           <li><a href="#">My Wishlists</a></li>
-          <!-- <li><a href="/profiles">Foodie Profiles</a></li> -->
+          <% end %>
           <li><a href="/reviews">Reviews</a></li>
           <li><a href="/search/search_by">Search By</a></li>
           <!-- Dropdown menu -->
@@ -73,12 +77,15 @@
                 <div class="site-header-actions">
                   <!-- <input type="text" name="login_user_name" placeholder="User Name">
                   <input type="password" name="login_user_password" placeholder="Password"> -->
-                  <a class="btn btn-success site-header-actions-btn mr-1" id="nav_log_in" href="/users/sign_in" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up"><span class="logintext">Log In</span></a>
-                  <a class="btn btn-link" id="sign_up"
-                  href="/users/sign_up" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in"><span class="signuptext">Sign Up</span></a>
+                  <% if !user_signed_in? %>
+                    <a class="btn btn-success site-header-actions-btn mr-1" id="nav_log_in" href="/users/sign_in" data-ga-click="(Logged out) Header, clicked Sign up, text:sign-up"><span class="logintext">Log In</span></a>
 
-                  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-
+                    <a class="btn btn-link" id="sign_up"
+                    href="/users/sign_up" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in"><span class="signuptext">Sign Up</span></a>
+                  <% end %>
+                  <% if user_signed_in? %>
+                     <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
+                  <% end %>
                 </div>
               </li>
             </ul>
