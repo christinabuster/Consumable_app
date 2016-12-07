@@ -17,7 +17,7 @@ RSpec.feature "ProfilePage", type: :feature do
         click_link('sign_up')
         expect(page).to have_content("Sign up")
       end
-      Then 'I can sign up, create a profile automatically and view it' do
+      Then 'I can sign up' do
         fill_in('Email', :with => 'test@gmail.com')
         fill_in('user_password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
@@ -36,6 +36,8 @@ RSpec.feature "ProfilePage", type: :feature do
         expect(page).to have_content("Im am older than 5")
         expect(page).to have_content("My Wishlist")
         click_link('Logout')
+      end
+      And "Create a profile automatically" do
         visit '/'
         click_link('sign_up')
         expect(page).to have_content("Sign up")
@@ -58,17 +60,18 @@ RSpec.feature "ProfilePage", type: :feature do
         click_link('Logout')
         expect(page).to have_content('Log In')
         expect(page).to have_content('Sign Up')
+      end
+      And "View it" do
         click_link('Log In')
         fill_in('user_email', :with => 'test@gmail.com')
         fill_in('user_password', :with => 'password')
         click_button('Log in')
         expect(page).to have_content('Logout')
         expect(page).to have_content('2011')
-        click_link("Profile")
+        click_link("My Profile")
+        save_and_open_page
         expect(page).to have_content("2011")
-        expect(page).to have_content("2012")
-        expect(page).to have_content("Im am older than 8")
-        expect(page).to have_content("Im am older than 5")
+        expect(page).to have_content("Im am older than 5i")
 
       end
     end #Steps

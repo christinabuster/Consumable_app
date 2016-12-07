@@ -7,7 +7,39 @@ RSpec.feature "LandingPages", type: :feature do
         visit '/'
       end
       Then 'I can see a welcome message' do
-        expect(page). to have_content ("Welcome to Consumable")
+        expect(page).to have_content ("Welcome to Consumable")
+        expect(page).to have_content ("Profile")
+        expect(page).to have_content ("Reviews")
+        expect(page).to have_content ("Log In")
+        expect(page).to have_content ("Sign Up")
+      end
+    end
+
+    Steps 'to review profiles' do
+      Given 'I am on the landing page' do
+        visit '/'
+      end
+      Then 'I can click the profile link' do
+        click_link('Profile')
+      end
+      And 'I can see the profiles page' do
+        expect(page).to have_content ("Name")
+        expect(page).to have_content ("Birthday")
+        expect(page).to have_content ("About me")
+      end
+    end
+
+    Steps 'to review profiles' do
+      Given 'I am on the landing page' do
+        visit '/'
+      end
+      Then 'I can click the profile link' do
+        click_link('Reviews')
+      end
+      And 'I can see the profiles page' do
+        expect(page).to have_content ("Listing Reviews")
+        expect(page).to have_content ("Image")
+        expect(page).to have_content ("Restaurant name")
       end
     end
 
