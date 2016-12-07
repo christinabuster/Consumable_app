@@ -11,9 +11,10 @@
 </p> -->
 
 <p>
-<%= link_to image_tag(@review.image.url(:large)), @review.image.url %>
+<%= image_tag @review.image.url(:large) %>
 </p>
-
+<br>
+<br>
 <p>
   <strong>Restaurant name:</strong>
   <%= @review.restaurant_name %>
