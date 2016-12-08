@@ -27,5 +27,31 @@ th {
     font-size: 15px;
     text-align: center;
     padding: 15px 32px;
+}
 
+.show_link, .show_link:visited {
+  color: white;
+}
+
+.restaurant_link, .restaurant_link:visited {
+  color: white;
+  text-decoration: underline;
+}
+
+#review_image {
+  float: left !important;
+  margin-top: 35px;
+  margin-bottom: 10%;
+  margin-right: 2%;
+  width: 350px;
+}
+.container {
+  font-size: 25px;
+  justify-content: center;
+}
+.edit_link, .edit_link:visited, .back_link, .back_link:visited {
+  color: white;
+  text-decoration: underline;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: inline;
 }

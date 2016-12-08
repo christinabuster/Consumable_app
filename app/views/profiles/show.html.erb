@@ -6,13 +6,17 @@
 <br>
 
 <div class="section-heading">
-  <p>
     <%= link_to image_tag(@profile.image.url(:large)), @profile.image.url %>
+</div>
+<br>
+
+<div class="section-heading">
+  <p>
     <strong>Name:</strong>
     <%= @profile.name %>
   </p>
 </div>
-<br>
+<br/>
 
 <div class="section-heading">
   <p>
@@ -35,10 +39,13 @@
 <!-- <h6><%= link_to 'Back', profiles_path %></h6> -->
 </div>
 <hr>
+
+
 <div class="section-heading">
 <h1>My Reviews</h1>
 </div>
 <br>
+
 <table class="table">
   <thead>
     <tr>

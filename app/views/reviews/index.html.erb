@@ -27,7 +27,7 @@
     <tr>
       <td><%= image_tag review.image.url(:small) %></td>
       <!--this link_to will link you to specific restaurant just click the restaurant_name list with review_path(review) -->
-      <td><%= link_to review.restaurant_name, review_path(review) %></td>
+      <td><%= link_to review.restaurant_name, review_path(review), class: "restaurant_link" %></td>
 
       <td><%= review.cuisine %></td>
       <td><%= review.dish %></td>

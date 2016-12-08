@@ -41,3 +41,26 @@
   font-family: 'Aref Ruqaa', serif;
   font-size: 12pt;
 }
+td {
+  color: white;
+  border-width: medium;
+  border-color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.show_link, .show_link:visited {
+  color: white;
+  text-decoration: underline;
+}
+.edit_link, .edit_link:visited {
+  color: white;
+  text-decoration: underline;
+}
+.destroy_link, .destroy_link:visited {
+  color: white;
+  text-decoration: underline;
+}
+.restaurant_link, .restaurant_link:visited {
+  color: white;
+  text-decoration: underline;
+}
