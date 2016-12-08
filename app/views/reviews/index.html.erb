@@ -1,7 +1,12 @@
 
-<!-- <p id="notice"><%= notice %></p> -->
+<p id="notice"><%= notice %></p>
 
-<h1>Listing Reviews</h1>
+<div class="panel panel-default">
+  <div class="panel-body">
+  Listing Reviews
+  </div>
+</div>
+
 
 <table class="table">
   <thead>
@@ -46,6 +51,8 @@
 
 <br>
 
+<div class="section-heading">
 <% if !current_user.nil? %>
 <%= link_to 'Create Review', new_review_path, :id => "new_review", :class => 'myButton' %>
 <% end %>
+</div>

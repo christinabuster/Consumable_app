@@ -9,7 +9,7 @@
   <strong>Longitude:</strong>
   <%= @review.longitude %>
 </p> -->
-
+<div class="container">
 <p>
 <%= image_tag @review.image.url(:large) %>
 </p>
@@ -76,3 +76,4 @@
 
 <%= link_to 'Edit', edit_review_path(@review) %> |
 <%= link_to 'Back', reviews_path %>
+</div>
