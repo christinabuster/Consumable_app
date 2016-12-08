@@ -47,5 +47,5 @@
 <br>
 
 <% if !current_user.nil? %>
-<h2><%= link_to 'Create Review', new_review_path, :id => "new_review" %></h2>
+<%= link_to 'Create Review', new_review_path, :id => "new_review", :class => 'myButton' %>
 <% end %>
