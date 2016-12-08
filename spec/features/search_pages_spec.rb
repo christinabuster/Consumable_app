@@ -15,7 +15,7 @@ RSpec.feature "SearchPages", type: :feature do
       Given 'that I am on the landing page' do
         visit '/'
         click_link('sign_up')
-        expect(page).to have_content("Sign up")
+        expect(page).to have_content("Create Account")
       end
       Then 'I can sign up, create a profile automatically and view it' do
         fill_in('Email', :with => 'test@gmail.com')

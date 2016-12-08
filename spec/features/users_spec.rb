@@ -47,7 +47,7 @@ RSpec.feature "LandingPages", type: :feature do
       Given 'I that I am on the sign up page' do
         visit '/'
         click_link('sign_up')
-        expect(page).to have_content("Sign up")
+        expect(page).to have_content("Create Account")
       end
       Then 'I can sign up' do
         fill_in('Email', :with => 'test@gmail.com')
@@ -64,7 +64,7 @@ RSpec.feature "LandingPages", type: :feature do
       Given 'I that I am on the sign up page' do
         visit '/'
         click_link('sign_up')
-        expect(page).to have_content("Sign up")
+        expect(page).to have_content("Create Account")
       end
       Then 'I can sign up' do
         fill_in('Email', :with => 'test@gmail.com')
@@ -135,7 +135,7 @@ end # RSpec
     #   expect(page). to have_content ("Welcome to Consumable")
     #   click_button ("sign_up")
     #   visit '/users/sign_up'
-    #   expect(page).to have_content("Sign up")
+    #   expect(page).to have_content("Create Account")
     #   fill_in('Email', :with => 'test@gmail.com')
     #   fill_in('Password', :with => 'password')
     #   fill_in('user_password_confirmation', :with => 'password')

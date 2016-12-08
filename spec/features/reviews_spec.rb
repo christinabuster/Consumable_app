@@ -15,7 +15,7 @@ RSpec.feature "Reviews", type: :feature do
       Given 'I that I am on the sign up page' do
         visit '/'
         click_link('sign_up')
-        expect(page).to have_content("Sign up")
+        expect(page).to have_content("Create Account")
       end
       Then 'I can sign up' do
         fill_in('Email', :with => 'test@gmail.com')
