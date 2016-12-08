@@ -37,6 +37,13 @@
 }
 
 .signuptext{
-  color:#32CD32
+  color:#32CD32;
+
+}
+
+body {
+  background-image: url('/images/food-vegetables-meal-kitchen.jpg');
+  background-size: 100%;
+  overflow: hidden;
 
 }
