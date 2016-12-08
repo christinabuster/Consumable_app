@@ -1,14 +1,16 @@
-<%= form_for(@review) do  |f| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+<div class="container">
 
-      <ul>
+  <%= form_for(@review) do  |f| %>
+  <% if @review.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+    <ul>
       <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
   <div class="field">
@@ -17,6 +19,8 @@
   <div class="field">
     <%= f.hidden_field :longitude %>
   </div>
+
+
   <div class="field">
     <%= f.label :restaurant_name %><br>
     <%= f.text_field :restaurant_name %>
@@ -75,9 +79,11 @@
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
-  </br>
-  <!-- id not allowed in embedded ruby. when testing, do: '#create_review input' -->
-  <div class="actions" id="create_review">
-    <%= f.submit %>
-  </div>
+</br>
+<!-- id not allowed in embedded ruby. when testing, do: '#create_review input' -->
+<div class="actions" id="create_review">
+  <%= f.submit %>
+</div>
 <% end %>
+
+</div><!-- End of class container-->
