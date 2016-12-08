@@ -14,7 +14,7 @@ RSpec.feature "ProfilePage", type: :feature do
       Given 'that I am on the landing page' do
         visit '/'
         click_link('sign_up')
-        expect(page).to have_content("Sign up")
+        expect(page).to have_content("Create Account")
       end
       Then 'I can sign up' do
         fill_in('Email', :with => 'test@gmail.com')
@@ -34,7 +34,6 @@ RSpec.feature "ProfilePage", type: :feature do
         click_button('Create Profile')
         expect(page).to have_content("Profile was successfully created.")
         expect(page).to have_content("2011")
-        expect(page).to have_content ("Avatar")
         expect(page).to have_content("Im am older than 5")
         expect(page).to have_content("My Wishlist")
         click_link('Logout')
@@ -42,7 +41,7 @@ RSpec.feature "ProfilePage", type: :feature do
       And "Create a profile automatically with image" do
         visit '/'
         click_link('sign_up')
-        expect(page).to have_content("Sign up")
+        expect(page).to have_content("Create Account")
         fill_in('Email', :with => 'test2@gmail.com')
         fill_in('user_password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
@@ -69,7 +68,7 @@ RSpec.feature "ProfilePage", type: :feature do
       And "Create a profile automatically witout image" do
         visit '/'
         click_link('sign_up')
-        expect(page).to have_content("Sign up")
+        expect(page).to have_content("Create Account")
         fill_in('Email', :with => 'test3@gmail.com')
         fill_in('user_password', :with => 'password')
         fill_in('user_password_confirmation', :with => 'password')
