@@ -51,7 +51,6 @@
 
 body {
   background-image: url('/images/food-vegetables-meal-kitchen.jpg');
-  background-size: 100%;
-
-
+  background-repeat:repeat;
+  background-size: cover;
 }
