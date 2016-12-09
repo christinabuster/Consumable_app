@@ -38,9 +38,27 @@ th {
   text-decoration: underline;
 }
 
+.container {
+  font-size: 25px;
+  justify-content: center;
+}
+
 .edit_link, .edit_link:visited, .back_link, .back_link:visited {
   color: white;
   text-decoration: underline;
   background-color: rgba(0, 0, 0, 0.6);
   display: inline;
+}
+
+.panel {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-weight: bolder;
+  font-size: 30px;
+  text-align: center;
+}
+
+#font {
+  font-size: 20px
 }

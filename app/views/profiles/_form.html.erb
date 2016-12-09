@@ -13,17 +13,22 @@
   </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.file_field :image %>
-    <%= f.label :name %><br>
+    <h3><%= f.file_field :image, :class => "white" %></h3>
+  </div>
+
+  <div class="field">
+    <%= f.label :name, :class => "white" %><br>
     <%= f.text_field :name %>
   </div>
+
   <div class="field">
-    <%= f.label :birthday %><br>
+    <%= f.label :birthday, :class => "white" %><br>
     <%= f.date_select :birthday, :start_year => Date.today.year - 100, :end_year => Date.today.year %>
   </div>
   <div class="field">
-    <%= f.label :about_me %><br>
+    <%= f.label :about_me, :class => "white" %><br>
     <%= f.text_area :about_me %>
   </div>
 
