@@ -57,10 +57,10 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="review_font">
     <% @search_results.each do |review| %>
     <tr>
-      <td><%= review.restaurant_name %></td>
+        <td><%= link_to review.restaurant_name, review_path(review), class: "restaurant_link" %></td>
       <td><%= review.cuisine %></td>
       <td><%= review.dish %></td>
       <td>$<%= review.price %></td>
@@ -71,9 +71,9 @@
       <td><%= review.postalcode %></td>
       <td><%= review.description %></td>
       <td><%= review.user.email %></td>
-      <td><%= link_to 'Show', review %></td>
-      <td><%= link_to 'Edit', edit_review_path(review) %></td>
-      <td><%= link_to 'Destroy', review, method: :delete, data: {confirm: 'Are you sure'} %></td>
+      <td><%= link_to 'Show', review, class: "show_link" %></td>
+      <td><%= link_to 'Edit', edit_review_path(review), class: "edit_link" %></td>
+      <td><%= link_to 'Destroy', review, class: "destroy_link", method: :delete, data: {confirm: 'Are you sure'} %></td>
     </tr>
     <% end %>
   </tbody>
