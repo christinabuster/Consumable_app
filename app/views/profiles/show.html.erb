@@ -35,7 +35,7 @@
 
 <br>
 <div class="section-heading">
-<h6><%= link_to 'Edit', edit_profile_path(@profile) %></h6>
+<%= link_to 'Edit', edit_profile_path(@profile), :class => 'myButton' %>
 <!-- <h6><%= link_to 'Back', profiles_path %></h6> -->
 </div>
 <hr>
@@ -91,5 +91,5 @@
 <br>
 
 <% if !current_user.nil? %>
-<h2><%= link_to 'Create Review', new_review_path, :id => "new_review" %></h2>
+<%= link_to 'Create Review', new_review_path, :id => "new_review", :class => 'myButton' %>
 <% end %>

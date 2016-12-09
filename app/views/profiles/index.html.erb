@@ -37,9 +37,9 @@
   <br>
 
   <div class="section-heading">
-    <h6>
+
     <% if user_signed_in?%>
-    <%= link_to 'Edit Profile', edit_profile_path(@user.profile) %>
+    <%= link_to 'Edit Profile', edit_profile_path(@user.profile), :class => 'myButton' %>
     <% end %>
-    </h6> <br/>
+    <br/>
   </div>
