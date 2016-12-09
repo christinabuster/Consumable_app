@@ -77,23 +77,20 @@
     <%= f.text_area :description, :cols => "40", :rows => "10" %>
   </div>
 
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
 
   <div class="field">
     <!-- User id field hidden and automatically fill-in by current user id -->
     <%= f.hidden_field :user_id, :value => current_user.id %>
   </div>
 
-  <div class="section-heading">
-  </br>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
   <!-- id not allowed in embedded ruby. when testing, do: '#create_review input' -->
     <div class="actions" id="create_review">
       <%= f.submit %>
     </div>
   <% end %>
-  </div>
-
 </div> <!-- class container -->
