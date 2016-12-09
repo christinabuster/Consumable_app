@@ -10,7 +10,7 @@
   </ul>
 </div>
 <% end %>
-<div class="container">
+
   <div class="field">
     <%= f.hidden_field :latitude %>
   </div>
@@ -19,8 +19,10 @@
   </div>
 
 
+<div class="container", id="font">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-sm-6">
+
       <div class="field">
         <%= f.label :restaurant_name, :class => "white" %><br>
         <%= f.text_field :restaurant_name %>
@@ -86,7 +88,7 @@
       <%= f.label :description, :class => "white" %><br>
       <%= f.text_area :description, :cols => "40", :rows => "10" %>
     </div>
-  </div><!-- Close Row   -->
+
 </div> <!-- class column -->
 
 
