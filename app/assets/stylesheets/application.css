@@ -13,9 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+ .signuptext{
+   color:green;
+
+ }
+
+ .logouttext{
+   color: #32CD32 !important;
+
+ }
+
+ .logintext{
+   color:green;
+
+ }
+
 .navbar-default {
      background-color: white;
-     font-family: 'Aref Ruqaa', serif;
+     font-family: serif;
      margin-bottom: 0px;
      padding-bottom: 0px;
 }
@@ -23,7 +39,7 @@
 .navbar-default .navbar-nav > li > a {
   color: 		#9ACD32; /*Change active text color here*/
   font-weight: bold;
-  font-family: 'Aref Ruqaa', serif;
+  font-family:  serif;
   font-size: 10pt;
 }
 
@@ -32,14 +48,6 @@
   font-weight: bold;
 }
 
-.logintext{
-  color: #32CD32;
-}
-
-.signuptext{
-  color:#32CD32;
-
-}
 
 body {
   background-image: url('/images/food-vegetables-meal-kitchen.jpg');
