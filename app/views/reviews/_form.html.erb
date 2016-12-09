@@ -1,106 +1,99 @@
 <%= form_for(@review) do  |f| %>
-<% if @review.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
-
-  <ul>
-    <% @review.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
 <% end %>
+
 <div class="container">
   <div class="field">
     <%= f.hidden_field :latitude %>
   </div>
+
   <div class="field">
     <%= f.hidden_field :longitude %>
   </div>
 
+  <div class="field">
+    <%= f.label :restaurant_name %><br>
+    <%= f.text_field :restaurant_name %>
+  </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <div class="field">
-        <%= f.label :restaurant_name %><br>
-        <%= f.text_field :restaurant_name %>
-      </div>
+  <div class="field">
+    <%= f.label :cuisine %><br>
+    <%= f.text_field :cuisine %>
+  </div>
 
-      <div class="field">
-        <%= f.label :cuisine %><br>
-        <%= f.text_field :cuisine %>
-      </div>
+  <div class="field">
+    <%= f.label :dish %><br>
+    <%= f.text_field :dish %>
+  </div>
 
-      <div class="field">
-        <%= f.label :dish %><br>
-        <%= f.text_field :dish %>
-      </div>
+  <div class="field">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
 
-      <div class="field">
-        <%= f.label :street %><br>
-        <%= f.text_field :street %>
-      </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div>
 
-      <div class="field">
-        <%= f.label :city %><br>
-        <%= f.text_field :city %>
-      </div>
+  <div class="field">
+    <%= f.label :state %><br>
+    <%= f.text_field :state %>
+  </div>
 
-      <div class="field">
-        <%= f.label :state %><br>
-        <%= f.text_field :state %>
-      </div>
-
-      <div class="field">
-        <%= f.label :postalcode %><br>
-        <%= f.text_field :postalcode %>
-      </div>
-
-    </div> <!-- class column -->
+  <div class="field">
+    <%= f.label :postalcode %><br>
+    <%= f.text_field :postalcode %>
+  </div>
 
 
-    <div class="field">
-      <%= f.label :image %><br>
-      <%= f.file_field :image %>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating %><br>
+    <select class="selectpicker" name="review[rating]">
+      <option value="">Rating</option>
+      <option value="1">&#x272D;</option>
+      <option value="2">&#x272D;&#x272D;</option>
+      <option value="3">&#x272D;&#x272D;&#x272D;</option>
+      <option value="4">&#x272D;&#x272D;&#x272D;&#x272D;</option>
+      <option value="5">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, :cols => "40", :rows => "10" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
+    <!-- User id field hidden and automatically fill-in by current user id -->
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+  </div>
+
+  <div class="section-heading">
+  </br>
+  <!-- id not allowed in embedded ruby. when testing, do: '#create_review input' -->
+    <div class="actions" id="create_review">
+      <%= f.submit %>
     </div>
+  <% end %>
+  </div>
 
-
-    <div class="field">
-      <%= f.label :price %><br>
-      <%= f.text_field :price %>
-    </div>
-
-    <div class="field">
-      <%= f.label :rating %><br>
-      <select class="selectpicker" name="review[rating]">
-        <option value="">Rating</option>
-        <option value="1">&#x272D;</option>
-        <option value="2">&#x272D;&#x272D;</option>
-        <option value="3">&#x272D;&#x272D;&#x272D;</option>
-        <option value="4">&#x272D;&#x272D;&#x272D;&#x272D;</option>
-        <option value="5">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
-      </select>
-    </div>
-
-    <div class="field">
-      <%= f.label :description %><br>
-      <%= f.text_area :description, :cols => "40", :rows => "10" %>
-    </div>
-  </div><!-- Close Row   -->
-</div> <!-- class column -->
-
-
-<div class="field">
-  <!-- User id field hidden and automatically fill-in by current user id -->
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-</div>
-
-<div class="section-heading">
-</br>
-<!-- id not allowed in embedded ruby. when testing, do: '#create_review input' -->
-<div class="actions" id="create_review">
-  <%= f.submit %>
-</div>
-<% end %>
-</div>
-</div>
+</div> <!-- class container -->
