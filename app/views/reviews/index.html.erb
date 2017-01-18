@@ -21,7 +21,11 @@
       <th>Postalcode</th>
       <th>Description</th>
       <th>User</th>
-      <th colspan="3"></th>
+      <th>See Review</th>
+      <% if user_signed_in? %>
+        <th>Edit</th>
+        <th>Destory</th>
+      <% end %>
     </tr>
   </thead>
 
@@ -42,6 +46,11 @@
       <td><%= review.postalcode %></td>
       <td><%= review.description %></td>
       <td><%= review.user.email %></td>
+      <td><%= link_to 'Show', review, class: "show_link" %></td>
+      <% if user_signed_in? && current_user.id == review.user_id %>
+        <td><%= link_to 'Edit', edit_review_path(review), class: "edit_link" %></td>
+        <td><%= link_to 'Destroy', review, class: "destroy_link", method: :delete, data: {confirm: 'Are you sure'} %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
