@@ -26,6 +26,7 @@
         <th>Edit</th>
         <th>Destory</th>
       <% end %>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -50,6 +51,9 @@
       <% if user_signed_in? && current_user.id == review.user_id %>
         <td><%= link_to 'Edit', edit_review_path(review), class: "edit_link" %></td>
         <td><%= link_to 'Destroy', review, class: "destroy_link", method: :delete, data: {confirm: 'Are you sure'} %></td>
+        <% else %>
+          <td></td>
+          <td></td>
       <% end %>
     </tr>
     <% end %>
