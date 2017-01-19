@@ -40,12 +40,13 @@
   color: 		#9ACD32; /*Change active text color here*/
   font-weight: bold;
   font-family:  serif;
-  font-size: 10pt;
+  font-size: 14pt;
 }
 
 .navbar-default .navbar-brand {
   color: 		#32CD32; /*Change active text color here*/
   font-weight: bold;
+  font-size: 16pt;
 }
 
 

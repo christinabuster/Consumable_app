@@ -10,4 +10,8 @@ class Review < ActiveRecord::Base
   validates :cuisine, :restaurant_name, length: { minimum: 2 }
   validates :price, length: { minimum: 1 }
   validates :description, length: { minimum: 10 }
+
+  def full_address
+    street+" "+city+" "+state+" "+postalcode
+  end
 end

@@ -10,70 +10,70 @@
   <%= @review.longitude %>
 </p> -->
 <div class="container" id="reviews_show">
-    <p >
-    <%= image_tag @review.image.url, id: "review_image" %>
-    </p>
-    <br>
-    <br>
-    <p>
-      <strong>Restaurant name:</strong>
-      <%= @review.restaurant_name %>
-    </p>
-    <br>
-    <p>
-      <strong>Cuisine:</strong>
-      <%= @review.cuisine %>
-    </p>
-    <br>
-    <p>
-      <strong>Dish:</strong>
-      <%= @review.dish %>
-    </p>
-    <br>
-    <p>
-      <strong>Price:</strong>
-      <%= @review.price %>
-    </p>
-    <br>
-    <p>
-      <strong>Rating:</strong>
-      <% @review.rating.times { %> &#x272D; <% } %>
-    </p>
-    <br>
-    <p>
-      <strong>Street:</strong>
-      <%= @review.street %>
-    </p>
-    <br>
-    <p>
-      <strong>City:</strong>
-      <%= @review.city %>
-    </p>
-    <br>
-    <p>
-      <strong>State:</strong>
-      <%= @review.state %>
-    </p>
-    <br>
-    <p>
-      <strong>Postalcode:</strong>
-      <%= @review.postalcode %>
-    </p>
-    <br>
-    <p>
-      <strong>Description:</strong>
-      <%= @review.description %>
-    </p>
-    <br>
-    <p>
-      <strong>User:</strong>
-      <%= @review.user.email %>
-    </p>
-    <br>
-    <br>
-  <%= link_to 'Edit', edit_review_path(@review), class: "edit_link" %> |
-  <%= link_to 'Back', reviews_path, class: "back_link" %>
   <br>
+  <p>
+    <strong>Restaurant name:</strong>
+    <%=  @review.restaurant_name %>
+  </p>
+  <br>
+  <p>
+    <strong>Cuisine:</strong>
+    <%= @review.cuisine %>
+  </p>
+  <br>
+  <p>
+    <strong>Dish:</strong>
+    <%= @review.dish %>
+  </p>
+  <br>
+  <p>
+    <strong>Price:</strong>
+    <%= @review.price %>
+  </p>
+  <br>
+  <p>
+    <strong>Rating:</strong>
+    <% @review.rating.times { %> &#x272D; <% } %>
+  </p>
+  <br>
+  <p>
+    <strong>Street:</strong>
+    <%= @review.street %>
+  </p>
+  <br>
+  <p>
+    <strong>City:</strong>
+    <%= @review.city %>
+  </p>
+  <br>
+  <p>
+    <strong>State:</strong>
+    <%= @review.state %>
+  </p>
+  <br>
+  <p>
+    <strong>Postalcode:</strong>
+    <%= @review.postalcode %>
+  </p>
+  <br>
+  <p>
+    <strong>Description:</strong>
+    <%= @review.description %>
+  </p>
+  <br>
+  <p>
+    <strong>User:</strong>
+    <%= @review.user.email %>
+  </p>
+  <br>
+  <p><%= link_to 'Back', reviews_path, class: "back_link" %></p>
+  <br>
+  <% if user_signed_in? && current_user.id == @review.user_id %>
+    <%= link_to 'Edit', edit_review_path(@review), class: "edit_link" %> |
+  <% end %>
+  <br>
+  <%= image_tag @review.image.url, id: "review_image" %>
+
+  <div id="restaurant_map" class="container" data-review-id="<%=@review.id%>"></div>
 </div>
 <!-- div contains google map -->
-<div id="restaurant_map" class="container" data-review-id="<%=@review.id%>">Google Map will appear here...</div>

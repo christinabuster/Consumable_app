@@ -11,36 +11,22 @@
   padding-left: 18px;
   padding-top: 10px;
 }
+
+.navbar-nav {
+  font-size: 36px;
+  }
 //End NAVIGATION BAR
 
-
 // Carousel
-#myCarousel{
-  top:5%;
-  margin:auto;
-  max-height:380px;
-  max-width: 600px;
-}
 .carousel-inner > .item > img{
-  max-height:380px;
-
+  width: 900px;
+  height: 800px;
 }
 
-.item {
-  max-height: 380px;
-}
-// End carousel
-
-// Carousel
-iframe {
-position: relative;
-margin:auto;
-top:50%;
-left:0%;
-max-height: 380px;
+.carousel-inner{
+  width:100%;
 }
 // End carousel
-
 
 .section-heading{
   text-align: center;

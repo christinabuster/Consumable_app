@@ -35,7 +35,6 @@ RSpec.feature "ProfilePage", type: :feature do
         expect(page).to have_content("Profile was successfully created.")
         expect(page).to have_content("2011")
         expect(page).to have_content("Im am older than 5")
-        expect(page).to have_content("My Wishlist")
         click_link('Logout')
       end
       And "Create a profile automatically with image" do
@@ -97,7 +96,6 @@ RSpec.feature "ProfilePage", type: :feature do
         fill_in('user_password', :with => 'password')
         click_button('Log in')
         expect(page).to have_content('My Profile')
-        expect(page).to have_content('My Wishlists')
         click_link("My Profile")
         expect(page).to have_content("2011")
         expect(page).to have_content("Im am older than 5")

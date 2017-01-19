@@ -37,7 +37,7 @@ RSpec.feature "LandingPages", type: :feature do
         click_link('Reviews')
       end
       And 'I can see the profiles page' do
-        expect(page).to have_content ("Listing Reviews")
+        expect(page).to have_content ("Latest Reviews")
         expect(page).to have_content ("Image")
         expect(page).to have_content ("Restaurant name")
       end
