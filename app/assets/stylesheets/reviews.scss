@@ -4,6 +4,25 @@
 #restaurant_map{
   width: 500px;
   height: 400px;
+  float: right;
+  margin-top: 10px;
+
+}
+
+#review_image {
+  margin-top: 10px;
+  width: 500px;
+  height: 400px;
+}
+
+p {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  display: inline-block;
 }
 
 h2 {
@@ -44,13 +63,11 @@ td {
 
 .container {
   font-size: 25px;
-  justify-content: center;
 }
 
 .edit_link, .edit_link:visited, .back_link, .back_link:visited {
   color: white;
   text-decoration: underline;
-  background-color: rgba(0, 0, 0, 0.6);
   display: inline;
 }
 

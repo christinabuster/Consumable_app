@@ -12,7 +12,7 @@
 
         <!-- Single button -->
         <select class="selectpicker second" name="price">
-          <option value="">Price</option>
+          <option class="test" value="">Price</option>
           <option value="10">$1-$10</option>
           <option value="20">$11-$20</option>
           <option value="30">$21-$30</option>
@@ -20,7 +20,7 @@
         </select>
 
         <select class="selectpicker third" name="rating" >
-          <option value="">Rating</option>
+          <option  value="">Rating</option>
           <option value="1">&#x272D;</option>
           <option value="2">&#x272D;&#x272D;</option>
           <option value="3">&#x272D;&#x272D;&#x272D;</option>
@@ -28,7 +28,7 @@
           <option value="5">&#x272D;&#x272D;&#x272D;&#x272D;&#x272D;</option>
         </select>
 
-        <button type="submit" class="btn-1 btn-info nav" id="find_it">Find It</button>
+        <button type="submit" class="btn-1 btn-success nav" id="find_it">Find It</button>
 
       </div> <!-- END CLASS FORM GROUP -->
 
@@ -53,11 +53,7 @@
       <th>Postalcode</th>
       <th>Description</th>
       <th>Email</th>
-      <th>See Review</th>
-      <% if user_signed_in? %>
-        <th>Edit</th>
-        <th>Destory</th>
-      <% end %>
+      <th colspan="2"></th>
     </tr>
   </thead>
 
@@ -77,10 +73,12 @@
       <td><%= review.postalcode %></td>
       <td><%= review.description %></td>
       <td><%= review.user.email %></td>
-      <td><%= link_to 'Show', review, class: "show_link" %></td>
       <% if user_signed_in? && current_user.id == review.user_id %>
         <td><%= link_to 'Edit', edit_review_path(review), class: "edit_link" %></td>
         <td><%= link_to 'Destroy', review, class: "destroy_link", method: :delete, data: {confirm: 'Are you sure you want to delete this review?'} %></td>
+        <% else %>
+          <td></td>
+          <td></td>
       <% end %>
     </tr>
   </tbody>

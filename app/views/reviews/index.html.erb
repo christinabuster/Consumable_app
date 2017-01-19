@@ -1,7 +1,7 @@
 
 <div class="panel panel-default">
   <div class="panel-body">
-  Listing Reviews
+  Latest Reviews
   </div>
 </div>
 
@@ -15,17 +15,9 @@
       <th>Dish</th>
       <th>Price</th>
       <th>Rating</th>
-      <th>Street</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Postalcode</th>
+      <th>Address</th>
       <th>Description</th>
       <th>User</th>
-      <th>See Review</th>
-      <% if user_signed_in? %>
-        <th>Edit</th>
-        <th>Destory</th>
-      <% end %>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -41,13 +33,9 @@
       <td><%= review.dish %></td>
       <td>$<%= review.price %></td>
       <td><% review.rating.times { %> &#x272D; <% } %></td>
-      <td><%= review.street %></td>
-      <td><%= review.city %></td>
-      <td><%= review.state %></td>
-      <td><%= review.postalcode %></td>
+      <td><%= review.full_address %></td>
       <td><%= review.description %></td>
       <td><%= review.user.email %></td>
-      <td><%= link_to 'Show', review, class: "show_link" %></td>
       <% if user_signed_in? && current_user.id == review.user_id %>
         <td><%= link_to 'Edit', edit_review_path(review), class: "edit_link" %></td>
         <td><%= link_to 'Destroy', review, class: "destroy_link", method: :delete, data: {confirm: 'Are you sure'} %></td>

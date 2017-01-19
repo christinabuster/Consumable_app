@@ -2,36 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .navbar-custom {
-     background-color: white;
-     border-color: #030033;
      font-family: 'Aref Ruqaa', serif;
 }
 
 .navbar-custom .form-group > input {
-  color: 		#000000; /*Change active text color here*/
 
   font-family: 'Aref Ruqaa', serif;
-  font-size: 12pt;
+  font-size: 16pt;
+  text-align: center;
 }
 
 .form-control {
   float:left;
+  height: 40px;
 }
 
 .second {
   float:left;
-  height: 34px;
+  height: 40px;
 }
 
 .third {
   float:left;
-  height: 34px;
+  height: 40px;
 }
 
 .btn-1 {
   text-align: center;
-  width: 65px;
-  height: 34px;
+  height: 40px;
   float:left;
   border-radius: 9%;
   border-style: outset;
@@ -39,7 +37,7 @@
 #nav-text {
   margin-top: 15px;
   font-family: 'Aref Ruqaa', serif;
-  font-size: 12pt;
+  font-size: 16pt;
 }
 td {
   color: white;

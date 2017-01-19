@@ -10,14 +10,10 @@
   <%= @review.longitude %>
 </p> -->
 <div class="container" id="reviews_show">
-  <p >
-  <%= image_tag @review.image.url, id: "review_image" %>
-  </p>
-  <br>
   <br>
   <p>
     <strong>Restaurant name:</strong>
-    <%= @review.restaurant_name %>
+    <%=  @review.restaurant_name %>
   </p>
   <br>
   <p>
@@ -70,12 +66,14 @@
     <%= @review.user.email %>
   </p>
   <br>
+  <p><%= link_to 'Back', reviews_path, class: "back_link" %></p>
   <br>
   <% if user_signed_in? && current_user.id == @review.user_id %>
     <%= link_to 'Edit', edit_review_path(@review), class: "edit_link" %> |
   <% end %>
-  <%= link_to 'Back', reviews_path, class: "back_link" %>
   <br>
+  <%= image_tag @review.image.url, id: "review_image" %>
+
+  <div id="restaurant_map" class="container" data-review-id="<%=@review.id%>"></div>
 </div>
 <!-- div contains google map -->
-<div id="restaurant_map" class="container" data-review-id="<%=@review.id%>">Google Map will appear here...</div>
